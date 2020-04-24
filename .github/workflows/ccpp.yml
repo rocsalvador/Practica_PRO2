@@ -18,4 +18,4 @@ jobs:
     - name: run
       run: ./main.exe < sample_intermedia.inp > sample.out
     - name: comparar
-      run: kompare sample_intermedia.cor sample.out
+      run: diff -b sample.out sample_intermedia.cor
