@@ -6,10 +6,6 @@
 
 #include "Especie.hh"
 
-#ifndef NO_DIAGRAM
-#include <vector>
-#endif
-
 using namespace std;
 
 class Cjt_especies{
