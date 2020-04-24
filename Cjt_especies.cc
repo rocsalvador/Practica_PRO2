@@ -68,9 +68,8 @@ void Cjt_especies::llegir_cjt_especies(){
 
 void Cjt_especies::eliminar_especie(const string& id){
     inventari.erase(id);
-
     map<string,Especie>::iterator it = inventari.begin();
-    while(it->first < id){
+    while(it != inventari.end() and it->first < id){
         it->second.eliminar_esp_dist(id);
         ++it;
     }
