@@ -16,6 +16,6 @@ jobs:
     - name: make
       run: make
     - name: run
-      run: ./main.exe < sample_intermedia.inp > sample.out
+      run: ./program.exe < sample.inp > sample.out
     - name: comparar
-      run: diff -b sample.out sample_intermedia.cor
+      run: diff -b sample.out sample.cor
