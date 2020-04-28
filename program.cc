@@ -82,6 +82,7 @@ int main(){
         else if(op == "inicialitza_clusters"){
             cout << "# " << op << endl;
             clusters.inicialitza_clusters(especies);
+            clusters.imprimir_taula_distancies();
             cout << endl;
         }
         else if(op == "pas_wpgma"){
@@ -93,6 +94,18 @@ int main(){
         else if(op == "distancies_clusters"){
             cout << "# " << op << endl;
             clusters.imprimir_taula_distancies();
+            cout << endl;
+        }
+        else if(op == "imprimeix_arbre"){
+            clusters.inicialitza_clusters(especies);
+            clusters.imprimeix_arbre_filogenetic();
+            cout << endl;
+        }
+        else if(op == "imprimeix_cluster"){
+            cin >> id;
+            cout << "# " << op << " " << id << endl;
+            if(clusters.existeix_cluster(id)) clusters.imprimeix_cluster(id);
+            else cout << "ERROR: El cluster " << id << " no existeix" << endl;
             cout << endl;
         }
     }

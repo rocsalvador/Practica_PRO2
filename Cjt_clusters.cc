@@ -68,9 +68,7 @@
         }
     }
 
-    void Cjt_clusters::imprimeix_arbre_filogenetic(const Cjt_especies& especies){
-        inicialitza_clusters(especies);
-
+    void Cjt_clusters::imprimeix_arbre_filogenetic(){
         while(distancies.size() > 1){
             pas_wpgma();
         }
@@ -88,9 +86,9 @@
     
     void Cjt_clusters::imprimir_taula_distancies() const{
         for(map<string,dist_cluster>::const_iterator it = distancies.begin(); it != distancies.end(); ++it){
+            cout << it->first << ":";
             for(map<string,double>::const_iterator it_1 = it->second.begin(); it_1 != it->second.end(); ++it_1){
-                if(it_1 == it->second.begin()) cout << it_1->second;
-                else cout << " " << it_1->second;
+                cout << " " << it_1->second;
             }
             cout << endl;
         }

@@ -46,7 +46,7 @@ public:
     /** @brief Imprimeix l'arbre després d'executar tot l'algorisme WPGMA
     *  \pre Cert
     *  \post S'ha imprès l'arbre pel canal de sortida estàndard i el cjt_clusters queda actualitzat */
-    void imprimeix_arbre_filogenetic(const Cjt_especies& especies);
+    void imprimeix_arbre_filogenetic();
     
     //Consultores:
     
