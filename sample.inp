@@ -19,10 +19,10 @@ obtener_gen c
 obtener_gen x
 tabla_distancias
 
-crea_especie f    BAAAAAAAAAAAAAAAAAAAAA
+crea_especie f    GAAAAAAAAAAAAAAAAAAAAA
 crea_especie f    TCGATACCAGAGAAACTGTT
 crea_especie g    AAAAAAAAAAAAAAAAAAAAAA
-crea_especie h    AAAAAAAAAAAAAAAAAAAAAB
+crea_especie h    AAAAAAAAAAAAAAAAAAAAAG
 
 imprime_cjt_especies
 tabla_distancias

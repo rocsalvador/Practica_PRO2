@@ -88,7 +88,6 @@ void Cjt_especies::escriure_cjt_especies() const{
     for(map<string,Especie>::const_iterator it = inventari.begin(); it != inventari.end(); ++it){
         cout << it->first << " " << it->second.consultar_gen() << endl;
     }
-    if(inventari.size() > 0) cout << endl;
 }
 
 void Cjt_especies::imprimir_taula_distancies() const{
@@ -97,7 +96,6 @@ void Cjt_especies::imprimir_taula_distancies() const{
         it->second.imprimir_distancies();
         cout << endl;
     }
-    if(inventari.size() > 0) cout << endl;
 }
 
 int Cjt_especies::consultar_mida() const{
