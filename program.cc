@@ -2,6 +2,7 @@
 *  @brief Programa que conté el main que consisteix en donar diferents operacions */
 
 #include "Cjt_especies.hh"
+#include "Cjt_clusters.hh"
 
 /** \mainpage Especificació de les classes i el main de la pràctica. 
  * \section classes Classes:
@@ -15,6 +16,7 @@ int main(){
     int k;
     cin >> k;
     Cjt_especies especies(k);
+    Cjt_clusters clusters;
 
     string op;
 
@@ -75,6 +77,22 @@ int main(){
         else if(op == "tabla_distancias"){
             cout << "# " << op << endl;
             especies.imprimir_taula_distancies();
+            cout << endl;
+        }
+        else if(op == "inicialitza_clusters"){
+            cout << "# " << op << endl;
+            clusters.inicialitza_clusters(especies);
+            cout << endl;
+        }
+        else if(op == "pas_wpgma"){
+            cout << "# " << op << endl;
+            clusters.pas_wpgma();
+            clusters.imprimir_taula_distancies();
+            cout << endl;
+        }
+        else if(op == "distancies_clusters"){
+            cout << "# " << op << endl;
+            clusters.imprimir_taula_distancies();
             cout << endl;
         }
     }
