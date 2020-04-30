@@ -27,13 +27,14 @@ string Cjt_especies::obtenir_gen(const string& id) const{
 
 void Cjt_especies::inicialitza_clusters(Cjt_clusters& clusters){
     for(map<string,Especie>::const_iterator it = inventari.begin(); it != inventari.end(); ++it){
-        for(map<string,Especie>::const_iterator it1 = inventari.begin(); it1 != inventari.end(); ++it1){
+        for(map<string,Especie>::const_iterator it1 = it; it1 != inventari.end(); ++it1){
             string id1 = it->first;
             string id2 = it1->first;
             double dist;
             if(id1 < id2) dist = it->second.consultar_distancia(id2);
             else dist = it1->second.consultar_distancia(id1);
             clusters.afegir_cluster(id1,id2,dist);
+            clusters.afegir_cluster(id2,id1,dist);
         }
     }
 }
