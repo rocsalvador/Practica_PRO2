@@ -9,19 +9,22 @@
         }
     }
 
-    Cjt_clusters::Cjt_clusters(){
-        
-    }
+    Cjt_clusters::Cjt_clusters(){}
 
-    void Cjt_clusters::inicialitza_clusters(const Cjt_especies& especies){
-        colleccio_clusters.clear();
-        distancies.clear();
+    void Cjt_clusters::afegir_cluster(string id1, string id2, double dist){
+        if(distancies.find(id1) != distancies.end()){
+            if(id1 != id2) distancies.find(id1)->second.insert(make_pair(id2,dist));
+            else distancies.find(id1)->second.insert(make_pair(id2,0));
+        }
+        else{
+            map<string,double> aux;
+            distancies.insert(make_pair(id1,aux));
 
-        especies.passar_informacio(distancies);
+            if(id1 != id2) distancies.find(id1)->second.insert(make_pair(id2,dist));
+            else distancies.find(id1)->second.insert(make_pair(id2,0));
 
-        for(auto it = distancies.begin(); it != distancies.end(); ++it){
-            BinTree<pair<string,double>> cluster(make_pair(it->first,-1));
-            colleccio_clusters.insert(make_pair(it->first,cluster));
+            BinTree<pair<string,double>> arbre(make_pair(id1,-1));
+            colleccio_clusters.insert(make_pair(id1,arbre));
         }
     }
 
@@ -38,9 +41,11 @@
                     }
                 }
             }
+
             double dist_fills = distancies.find(min_dist.first)->second.find(min_dist.second)->second/2;
             string id_nou_cluster = min_dist.first + min_dist.second;
             map<string,double> dist_nou_cluster;
+
             for(map<string,dist_cluster>::iterator it = distancies.begin(); it != distancies.end(); ++it){
                 if(it->first != min_dist.first and it->first != min_dist.second){
                     double mitjana = (it->second.find(min_dist.first)->second + it->second.find(min_dist.second)->second)/2;
@@ -62,10 +67,16 @@
             dist_nou_cluster.insert(make_pair(id_nou_cluster,0));
             distancies.insert(make_pair(id_nou_cluster,dist_nou_cluster));
 
-            BinTree<pair<string,double>> nou_cluster(make_pair(id_nou_cluster,dist_fills), colleccio_clusters.find(min_dist.first)->second, colleccio_clusters.find(min_dist.second)->second);
+            BinTree<pair<string,double>> nou_cluster(make_pair(id_nou_cluster,dist_fills), 
+                colleccio_clusters.find(min_dist.first)->second, colleccio_clusters.find(min_dist.second)->second);
 
             colleccio_clusters.insert(make_pair(id_nou_cluster,nou_cluster));
         }
+    }
+
+    void Cjt_clusters::neteja_clusters(){
+        distancies.clear();
+        colleccio_clusters.clear();
     }
 
     void Cjt_clusters::imprimeix_arbre_filogenetic(){
@@ -88,7 +99,7 @@
         for(map<string,dist_cluster>::const_iterator it = distancies.begin(); it != distancies.end(); ++it){
             cout << it->first << ":";
             for(map<string,double>::const_iterator it_1 = it->second.begin(); it_1 != it->second.end(); ++it_1){
-                cout << " " << it_1->second;
+                cout << " " << it_1->first << "(" << it_1->second << ")";
             }
             cout << endl;
         }

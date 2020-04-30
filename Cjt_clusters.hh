@@ -4,8 +4,6 @@
 #ifndef CJT_CLUSTERS
 #define CJT_CLUSTERS
 
-#include "Cjt_especies.hh"
-
 #ifndef NO_DIAGRAM
 #include "BinTree.hh"
 #include <map>
@@ -32,11 +30,6 @@ public:
     Cjt_clusters();
 
     //Modificadores
-    
-    /** @brief Inicialitza els clusters a partir de les espècies actuals
-    *  \pre Cert
-    *  \post El cjt_clusters ha quedat creat a partir del cjt_especies*/
-    void inicialitza_clusters(const Cjt_especies& esp);
 
     /** @brief Executa un pas de l'algorisme WPGMA amb el cjt_clusters actual
     *  \pre Cert
@@ -47,6 +40,16 @@ public:
     *  \pre Cert
     *  \post S'ha imprès l'arbre pel canal de sortida estàndard i el cjt_clusters queda actualitzat */
     void imprimeix_arbre_filogenetic();
+
+    /** @brief Afegeix un nou cluster al cjt de clusters o afegeix una distància amb una altrea espècie
+     * \pre dist >= 0
+     * \post S'afegeix el cluster id1, si no està present en el paràmetre implícit, i s'afegeix la distància amb id2 */
+    void afegir_cluster(string id1, string id2, double dist);
+
+    /** @brief Elimina tots els elements de la classe cjt clusters
+     * \pre Cert
+     * \post El paràmatre implícit ha quedat buit */
+    void neteja_clusters();
     
     //Consultores:
     

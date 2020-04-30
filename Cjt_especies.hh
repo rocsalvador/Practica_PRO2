@@ -5,6 +5,7 @@
 #define CJT_ESPECIES
 
 #include "Especie.hh"
+#include "Cjt_clusters.hh"
 
 using namespace std;
 
@@ -68,10 +69,10 @@ public:
      * \post S'han imprès les espècies pel canal estàndard de sortida*/
     void escriure_cjt_especies() const;
     
-    /** @brief Passa al paràmetre explícit la informació necessària per inicialitzar els clusters
+    /** @brief Inicialitza el cjt de clusters amb el cjt d'especies actual
      * \pre Cert
-     * \post El paràmetre explícit ha quedat definit amb els valors donats pel cjt d'espècies actual */
-    void passar_informacio(map<string,map<string,double>>& clusters) const;
+     * \post El paràmetre explícit ha quedat creat amb les dades del paràmetre implícit */
+    void inicialitza_clusters(Cjt_clusters& clusters);
 
     /** @brief Retorna el numero d'espècies del conjunt
      * \pre Cert

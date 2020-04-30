@@ -81,7 +81,8 @@ int main(){
         }
         else if(op == "inicialitza_clusters"){
             cout << "# " << op << endl;
-            clusters.inicialitza_clusters(especies);
+            clusters.neteja_clusters();
+            especies.inicialitza_clusters(clusters);
             clusters.imprimir_taula_distancies();
             cout << endl;
         }
@@ -97,7 +98,8 @@ int main(){
             cout << endl;
         }
         else if(op == "imprimeix_arbre"){
-            clusters.inicialitza_clusters(especies);
+            clusters.neteja_clusters();
+            especies.inicialitza_clusters(clusters);
             clusters.imprimeix_arbre_filogenetic();
             cout << endl;
         }
