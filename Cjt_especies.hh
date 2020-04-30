@@ -67,11 +67,6 @@ public:
      * \pre Cert
      * \post S'han imprès les espècies pel canal estàndard de sortida*/
     void escriure_cjt_especies() const;
-    
-    /** @brief Passa al paràmetre explícit la informació necessària per inicialitzar els clusters
-     * \pre Cert
-     * \post El paràmetre explícit ha quedat definit amb els valors donats pel cjt d'espècies actual */
-    void passar_informacio(map<string,map<string,double>>& clusters) const;
 
     /** @brief Retorna el numero d'espècies del conjunt
      * \pre Cert

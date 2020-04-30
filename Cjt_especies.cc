@@ -25,25 +25,6 @@ string Cjt_especies::obtenir_gen(const string& id) const{
     return inventari.find(id)->second.consultar_gen();
 }
 
-void Cjt_especies::passar_informacio(map<string,map<string,double>>& clusters) const{
-    for(auto it = inventari.begin(); it != inventari.end(); ++it){
-        map<string,double> distancies;
-        bool passat = false;
-        for(auto it1 = inventari.begin(); it1 != inventari.end(); ++it1){
-            if(it != it1){
-                if(passat) distancies.insert(make_pair(it1->first,it->second.consultar_distancia(it1->first)));
-                else distancies.insert(make_pair(it1->first,it1->second.consultar_distancia(it->first)));
-            }
-            else{
-                passat = true;
-                distancies.insert(make_pair(it->first, 0));
-            }
-        }
-        clusters.insert(make_pair(it->first,distancies));
-        distancies.clear();
-    }
-}
-
 void Cjt_especies::llegir_cjt_especies(){
     inventari.clear();
     int n;
