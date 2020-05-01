@@ -40,11 +40,6 @@ public:
     * \post Ha retornat el gen de l'espècie */
     string consultar_gen() const;
 
-    /** @brief Calcula la distància amb l'espècie del paràmetre
-    * \pre ert
-    * \post S'ha retornat el valor de la distància */
-    double distancia(const Especie& esp) const;
-
     /** @brief Consulta la distància amb l'espècie id
     * \pre Id ha d'estar al cjt de distàncies
     * \post Ha retornat la distància amb espècie id*/
@@ -54,10 +49,10 @@ public:
 
     //Modificadores:
 
-    /** @brief Afegeix o modifica una distància amb una altra espècie
-    * \pre Cert
-    * \post S'ha afegit l'id amb la distància corresponent al cjt de distàncies */
-    void afegir_distancia(const string& id, const double& dist);
+    /** @brief Calcula la distància amb l'espècie del paràmetre
+    * \pre Esp té el gen definit
+    * \post S'ha afegit a la taula de distancies la distancia amb esp */
+    void distancia(const Especie& esp, string id);
 
     /** @brief Elimina la distància amb l'espècie id
     * \pre Id ha d'estar al cjt de distàncies

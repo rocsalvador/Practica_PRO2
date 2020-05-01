@@ -12,10 +12,10 @@
 
 using namespace std;
 
-typedef map<string,double> dist_cluster;
 
 class Cjt_clusters{
 private:
+    typedef map<string,double> dist_cluster;
     /// Map que conté els clusters i la seva distància amb la resta
     map<string,dist_cluster> distancies;
     /// Arbres dels diferents clusters amb la distància amb els seus fills

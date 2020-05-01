@@ -7,16 +7,10 @@ Cjt_especies::Cjt_especies(int k){
 void Cjt_especies::afegeix_especie(const string& id, const string& gen){
     Especie esp(gen,k);
     inventari.insert(make_pair(id,esp));
-    map<string,Especie>::iterator afegit = inventari.find(id);
     for(map<string,Especie>::iterator it = inventari.begin(); it != inventari.end(); ++it){
         if(id != it->first){
-            double dist = afegit->second.distancia(it->second);
-            if(id < it->first){
-                afegit->second.afegir_distancia(it->first,dist);
-            }
-            else{
-                it->second.afegir_distancia(afegit->first,dist);
-            }
+            if(id < it->first) esp.distancia(it->second,it->first);
+            else it->second.distancia(esp,id);
         }
     }
 }
@@ -54,8 +48,7 @@ void Cjt_especies::llegir_cjt_especies(){
     for(map<string,Especie>::iterator it = inventari.begin(); it != inventari.end(); ++it){
         for(map<string,Especie>::iterator it_1 = it; it_1 != inventari.end(); ++it_1){
             if(it->first != it_1->first){
-                double dist = it->second.distancia(it_1->second);
-                it->second.afegir_distancia(it_1->first,dist);
+                it->second.distancia(it_1->second,it_1->first);
             }
         }
     }

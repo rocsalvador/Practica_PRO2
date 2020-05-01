@@ -21,7 +21,7 @@ string Especie::consultar_gen() const{
     return gen;
 }
 
-double Especie::distancia(const Especie& esp) const{
+void Especie::distancia(const Especie& esp, string id){
     map<string,int> kmer1 = esp.kmer;
     double unio = 0;
     double inters = 0;
@@ -42,14 +42,9 @@ double Especie::distancia(const Especie& esp) const{
         unio += it_1->second;
     }
 
-   double dist = (1 - (inters/unio))*100;
-   
-   return dist;
-}
+    double dist = (1 - (inters/unio))*100;
 
-void Especie::afegir_distancia(const string& id, const double& dist){
-    if(distancies.find(id) == distancies.end()) distancies.insert(make_pair(id,dist));
-    else distancies.find(id)->second = dist;
+    distancies.insert(make_pair(id,dist));
 }
 
 void Especie::imprimir_distancies() const{
