@@ -3,6 +3,7 @@ OPCIONS = -D_JUDGE_ -D_GLIBCXX_DEBUG -O2 -Wall -Wextra -Werror -Wno-sign-compare
 
 program.exe: program.o Especie.o Cjt_especies.o
 	g++ -o program.exe Especie.o Cjt_especies.o program.o $(OPCIONS)
+	rm *.o
 
 Especie.o: Especie.cc Especie.hh
 	g++ -c Especie.cc $(OPCIONS)
