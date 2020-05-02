@@ -1,11 +1,9 @@
 #include "Cjt_especies.hh"
 
-Cjt_especies::Cjt_especies(int k){
-    this->k = k;
-}
+Cjt_especies::Cjt_especies(){}
 
 void Cjt_especies::afegeix_especie(const string& id, const string& gen){
-    Especie esp(gen,k);
+    Especie esp(gen);
     inventari.insert(make_pair(id,esp));
     for(map<string,Especie>::iterator it = inventari.begin(); it != inventari.end(); ++it){
         if(id != it->first){
@@ -27,7 +25,7 @@ void Cjt_especies::llegir_cjt_especies(){
     string id, gen;
     for(int i = 0; i < n; ++i){
         cin >> id >> gen;
-        Especie esp(gen,k);
+        Especie esp(gen);
         inventari.insert(make_pair(id,esp));
     }
 

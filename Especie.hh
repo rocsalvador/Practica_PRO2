@@ -19,6 +19,9 @@ private:
     map<string,double> distancies;
     ///kmer
     map<string,int> kmer;
+    ///k per crear els kmers
+    static int k;
+    
 public:
     
     //Creadores:
@@ -31,7 +34,7 @@ public:
     /** @brief Creadora
     * \pre Cert
     * \post L'especie s'ha creat amb this->gen = gen i amb el kmer amb el parametre k */
-    Especie(string gen, int k);
+    Especie(string gen);
 
     //Consultores:
 
@@ -58,6 +61,11 @@ public:
     * \pre Id ha d'estar al cjt de distàncies
     * \post S'ha eliminat la distància amb l'espècie */
     void eliminar_esp_dist(const string& id);
+
+    /** @brief Defineix el valor de k
+     * \pre k > 0
+     * \post Static k = k; */
+    static void definir_k(int k);
 
     //Destructora per defecte:
 
