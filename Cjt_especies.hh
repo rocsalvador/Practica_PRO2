@@ -14,7 +14,7 @@ private:
     ///Conjunt d'especies
     map<string,Especie> inventari;
     ///Valor per crear els kmers
-    int k;
+    static int k;
 
 public:
     //Creadora:
