@@ -2,7 +2,11 @@
 
 Especie::Especie(){}
 
-Especie::Especie(string gen, int k){
+void Especie::definir_k(int k_in){
+    k = k_in;
+}
+
+Especie::Especie(string gen){
     this->gen = gen;
     for(int i = 0; i < gen.size() - (k-1); ++i){
         string part1="";

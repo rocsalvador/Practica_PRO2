@@ -13,8 +13,6 @@ class Cjt_especies{
 private:
     ///Conjunt d'especies
     map<string,Especie> inventari;
-    ///Valor per crear els kmers
-    int k;
 
 public:
     //Creadora:
@@ -22,7 +20,7 @@ public:
     /** @brief Constructora per defecte 
      * \pre Cert
      * \post S'ha creat un cjt d'espècies buit*/
-    Cjt_especies(int k);
+    Cjt_especies();
 
     //Modificadores:
 

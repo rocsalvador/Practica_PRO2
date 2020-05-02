@@ -11,11 +11,15 @@
  * \subsection cjt_c - Cjt_clusters
 */
 
+int Especie::k;
+
 /** @brief Main amb totes les operacions que requereix la pràctica */
 int main(){
     int k;
     cin >> k;
-    Cjt_especies especies(k);
+    Especie::definir_k(k);
+    
+    Cjt_especies especies;
     Cjt_clusters clusters;
 
     string op;
