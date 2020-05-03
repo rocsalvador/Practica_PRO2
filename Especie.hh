@@ -44,10 +44,13 @@ public:
     string consultar_gen() const;
 
     /** @brief Consulta la distància amb l'espècie id
-    * \pre Id ha d'estar al cjt de distàncies
+    * \pre Id ha d'estar al cjt de distàncies, id != this->id
     * \post Ha retornat la distància amb espècie id*/
     double consultar_distancia(const string& id) const;
 
+    /** @brief Imprimeix les distàncies amb la resta d'espècies
+     * \pre Cert
+     * \post S'han imprès totes les distàncies del paràmetre implícit */
     void imprimir_distancies() const;
 
     //Modificadores:
