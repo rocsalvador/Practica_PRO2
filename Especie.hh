@@ -21,6 +21,7 @@ private:
     map<string,int> kmer;
     ///k per crear els kmers
     static int k;
+    
 public:
     
     //Creadores:
@@ -47,6 +48,9 @@ public:
     * \post Ha retornat la distància amb espècie id*/
     double consultar_distancia(const string& id) const;
 
+    /** @brief Imprimeix les distàncies amb la resta d'espècies
+    * \pre Cert
+    * \post S'han imprès totes les distàncies del paràmetre implícit */
     void imprimir_distancies() const;
 
     //Modificadores:
