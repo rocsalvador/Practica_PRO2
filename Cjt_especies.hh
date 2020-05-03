@@ -7,8 +7,6 @@
 #include "Especie.hh"
 #include "Cjt_clusters.hh"
 
-using namespace std;
-
 class Cjt_especies{
 private:
     ///Conjunt d'especies
