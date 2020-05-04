@@ -26,37 +26,24 @@ string Especie::consultar_gen() const{
 }
 
 void Especie::distancia(const Especie& esp, string id){
+    map<string,int> kmer1 = esp.kmer;
     double unio = 0;
     double inters = 0;
 
-    map<string,int>::const_iterator it = kmer.begin();
-    map<string,int>::const_iterator it1 = esp.kmer.begin();
-
-    while(it != kmer.end() and it1 != esp.kmer.end()){
-        if(it->first == it1->first){
-            unio += max(it->second,it1->second);
-            inters += min(it->second,it1->second);
-            ++it;
-            ++it1;
+    for(map<string,int>::const_iterator it_1 = kmer.begin(); it_1 != kmer.end(); ++it_1){
+        string id = it_1->first;
+        int num_kmer = it_1->second;
+        if(kmer1.find(id) != kmer1.end()){
+            int num_kmer1 = kmer1.find(id)->second;
+            unio += max(num_kmer,num_kmer1);
+            inters += min(num_kmer,num_kmer1);
+            kmer1.erase(id);
         }
-        else if(it->first < it1->first){
-            unio += it->second;
-            ++it;
-        }
-        else{
-            unio += it1->second;
-            ++it1;
-        }
+        else unio += num_kmer;
     }
 
-    while(it != kmer.end()){
-        unio += it->second;
-        ++it;
-    }
-
-    while(it1 != esp.kmer.end()){
-        unio += it1->second;
-        ++it1;
+    for(map<string,int>::const_iterator it_1 = kmer1.begin(); it_1 != kmer1.end(); ++it_1){
+        unio += it_1->second;
     }
 
     double dist = (1 - (inters/unio))*100;
