@@ -86,35 +86,41 @@ int main(){
             especies.imprimir_taula_distancies();
             cout << endl;
         }
-        else if(op == "inicialitza_clusters"){
+        else if(op == "inicializa_clusters"){
             cout << "# " << op << endl;
             clusters.neteja_clusters();
             especies.inicialitza_clusters(clusters);
             clusters.imprimir_taula_distancies();
             cout << endl;
         }
-        else if(op == "pas_wpgma"){
+        else if(op == "ejecuta_paso_wpgma"){
             cout << "# " << op << endl;
-            clusters.pas_wpgma();
-            clusters.imprimir_taula_distancies();
+            if(clusters.num_clusters() > 1){
+                clusters.pas_wpgma();
+                clusters.imprimir_taula_distancies();
+            }
+            else cout << "ERROR: num_clusters <= 1" << endl;
             cout << endl;
         }
-        else if(op == "distancies_clusters"){
+        else if(op == "imprime_arbol_filogenetico"){
             cout << "# " << op << endl;
-            clusters.imprimir_taula_distancies();
-            cout << endl;
-        }
-        else if(op == "imprimeix_arbre"){
             clusters.neteja_clusters();
-            especies.inicialitza_clusters(clusters);
-            clusters.imprimeix_arbre_filogenetic();
+            if(especies.consultar_mida() > 0){
+                especies.inicialitza_clusters(clusters);
+                clusters.imprimeix_arbre_filogenetic();
+                cout << endl;
+            }
+            else cout << "ERROR: El conjunto de clusters es vacio." << endl;
             cout << endl;
         }
-        else if(op == "imprimeix_cluster"){
+        else if(op == "imprime_cluster"){
             cin >> id;
             cout << "# " << op << " " << id << endl;
-            if(clusters.existeix_cluster(id)) clusters.imprimeix_cluster(id);
-            else cout << "ERROR: El cluster " << id << " no existeix" << endl;
+            if(clusters.existeix_cluster(id)){
+                clusters.imprimeix_cluster(id);
+                cout << endl;
+            }
+            else cout << "ERROR: El cluster " << id << " no existe." << endl;
             cout << endl;
         }
     }

@@ -73,6 +73,8 @@ public:
     *  \post S'han imprès totes les distàncies pel canal estàndard de sortida */
     void imprimir_taula_distancies() const;
 
+    int num_clusters() const;
+
     //Destructora:
     
     /** @brief Desctructora per defecte 

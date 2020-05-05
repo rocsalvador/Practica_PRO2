@@ -1,13 +1,12 @@
     #include "Cjt_clusters.hh"
 
-    void imprimir_arbre(const BinTree<pair<string,double>>& arbre, int n){
-        if(arbre.empty()) return;
+    void imprimir_arbre(const BinTree<pair<string,double>>& arbre){
+        if(arbre.value().second == -1) cout << "[" << arbre.value().first << "]";
         else{
-            for(int i = 0; i < n; ++i) cout << " ";
-            cout << arbre.value().first << " " << arbre.value().second << endl;
-            ++n;
-            imprimir_arbre(arbre.left(), n);
-            imprimir_arbre(arbre.right(), n);
+            cout << "[(" << arbre.value().first << ", " << arbre.value().second << ") ";
+            imprimir_arbre(arbre.left());
+            imprimir_arbre(arbre.right());
+            cout << "]";
         }
     }
 
@@ -94,13 +93,11 @@
         while(distancies.size() > 1){
             pas_wpgma();
         }
-        int n = 0;
-        imprimir_arbre(colleccio_clusters.find(distancies.begin()->first)->second, n);
+        imprimir_arbre(colleccio_clusters.find(distancies.begin()->first)->second);
     }
 
     void Cjt_clusters::imprimeix_cluster(const string& id) const{
-        int n = 0;
-        imprimir_arbre(colleccio_clusters.find(id)->second, n);
+        imprimir_arbre(colleccio_clusters.find(id)->second);
     }
 
     bool Cjt_clusters::existeix_cluster(const string& id) const{
@@ -111,12 +108,14 @@
         for(map<string,dist_cluster>::const_iterator it = distancies.begin(); it != distancies.end(); ++it){
             cout << it->first << ":";
             for(map<string,double>::const_iterator it_1 = it->second.begin(); it_1 != it->second.end(); ++it_1){
-                cout << " " << it_1->first << "(" << it_1->second << ") ";
+                cout << " " << it_1->first << " (" << it_1->second << ")";
             }
             cout << endl;
         }
     }
 
-    Cjt_clusters::~Cjt_clusters(){
-
+    int Cjt_clusters::num_clusters() const{
+        return distancies.size();
     }
+
+    Cjt_clusters::~Cjt_clusters(){}
