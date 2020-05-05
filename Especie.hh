@@ -32,7 +32,7 @@ public:
     Especie();
 
     /** @brief Creadora
-    * \pre Cert
+    * \pre gen.size() >= k
     * \post L'especie s'ha creat amb this->gen = gen i amb el kmer amb el parametre k */
     Especie(string gen);
 
