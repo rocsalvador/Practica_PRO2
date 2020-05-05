@@ -4,10 +4,10 @@ Cjt_especies::Cjt_especies(){}
 
 void Cjt_especies::afegeix_especie(const string& id, const string& gen){
     Especie esp(gen);
-    inventari.insert(make_pair(id,esp));
+    auto afegit = inventari.insert(make_pair(id,esp));
     for(map<string,Especie>::iterator it = inventari.begin(); it != inventari.end(); ++it){
         if(id != it->first){
-            if(id < it->first) esp.distancia(it->second,it->first);
+            if(id < it->first) afegit.first->second.distancia(it->second,it->first);
             else it->second.distancia(esp,id);
         }
     }
