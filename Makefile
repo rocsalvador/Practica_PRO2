@@ -2,7 +2,7 @@
 OPCIONS = -D_JUDGE_ -D_GLIBCXX_DEBUG -O2 -Wall -Wextra -Werror -Wno-sign-compare -std=c++11
 
 program.exe: program.o Especie.o Cjt_especies.o
-	g++ -o program.exe Especie.o Cjt_especies.o program.o $(OPCIONS)
+	g++ -o program.exe Especie.o Cjt_especies.o program.o
 	rm *.o
 
 Especie.o: Especie.cc Especie.hh
