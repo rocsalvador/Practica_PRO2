@@ -7,17 +7,17 @@ Volem crear un programa per...
 ### Linux
 **Requisits:**
 
-Make, instal·lable executant `sudo apt install make` a la terminal
+- Make, instal·lable executant `sudo apt install make` a la terminal
   
-G++, instal·lable executant `sudo apt install g++` a la terminal
+- G++, instal·lable executant `sudo apt install g++` a la terminal
   
 **Execució**
 
 Obrir la terminal a la carpeta on tinguem els fitxers:
   
-`make` , per compilar i crear el fitxer executable
+1. `make` , per compilar i crear el fitxer executable
   
-`./program.exe`, per executar el programa
+2. `./program.exe`, per executar el programa
 
 *Opcional per provar el programa:*
   
@@ -29,7 +29,8 @@ Si no ens surt cap missatge d'error el programa és correcte
     
 //A L'EXECUTAR EL PROGRAMA EL PRIMER VALOR QUE S'INTRODUEIX ÉS K\\
   
-**Instruccions al programa:**
-    1- lee_cjt_especies , seguit del número d'espècies que volem introduir
+**Instruccions del programa:**
+
+1. lee_cjt_especies , seguit del número d'espècies que volem introduir
     
   
