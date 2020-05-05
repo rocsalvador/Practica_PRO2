@@ -2,6 +2,7 @@
 *  @brief Programa que conté el main que consisteix en donar diferents operacions */
 
 #include "Cjt_especies.hh"
+#include "Cjt_clusters.hh"
 
 /** \mainpage Especificació de les classes i el main de la pràctica. 
  * \section classes Classes:
@@ -17,7 +18,9 @@ int main(){
     int k;
     cin >> k;
     Especie::definir_k(k);
+    
     Cjt_especies especies;
+    Cjt_clusters clusters;
 
     string op;
 
@@ -44,8 +47,8 @@ int main(){
             cout << "# " << op << " " << id << " " << id2 << endl;
             if(especies.existeix_especie(id) and especies.existeix_especie(id2)){
                 if(id != id2) cout << especies.consultar_distancia(id,id2) << endl;
-                else cout << "0" << endl;
-            }
+                else cout << 0 << endl;
+            } 
             else{
                 cout << "ERROR: La especie ";
                 if(especies.existeix_especie(id)) cout << id2 << " no existe.";
@@ -81,6 +84,43 @@ int main(){
         else if(op == "tabla_distancias"){
             cout << "# " << op << endl;
             especies.imprimir_taula_distancies();
+            cout << endl;
+        }
+        else if(op == "inicializa_clusters"){
+            cout << "# " << op << endl;
+            clusters.neteja_clusters();
+            especies.inicialitza_clusters(clusters);
+            clusters.imprimir_taula_distancies();
+            cout << endl;
+        }
+        else if(op == "ejecuta_paso_wpgma"){
+            cout << "# " << op << endl;
+            if(clusters.num_clusters() > 1){
+                clusters.pas_wpgma();
+                clusters.imprimir_taula_distancies();
+            }
+            else cout << "ERROR: num_clusters <= 1" << endl;
+            cout << endl;
+        }
+        else if(op == "imprime_arbol_filogenetico"){
+            cout << "# " << op << endl;
+            clusters.neteja_clusters();
+            if(especies.consultar_mida() > 0){
+                especies.inicialitza_clusters(clusters);
+                clusters.imprimeix_arbre_filogenetic();
+                cout << endl;
+            }
+            else cout << "ERROR: El conjunto de clusters es vacio." << endl;
+            cout << endl;
+        }
+        else if(op == "imprime_cluster"){
+            cin >> id;
+            cout << "# " << op << " " << id << endl;
+            if(clusters.existeix_cluster(id)){
+                clusters.imprimeix_cluster(id);
+                cout << endl;
+            }
+            else cout << "ERROR: El cluster " << id << " no existe." << endl;
             cout << endl;
         }
     }

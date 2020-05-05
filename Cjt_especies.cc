@@ -17,6 +17,20 @@ string Cjt_especies::obtenir_gen(const string& id) const{
     return inventari.find(id)->second.consultar_gen();
 }
 
+void Cjt_especies::inicialitza_clusters(Cjt_clusters& clusters){
+    for(map<string,Especie>::iterator it = inventari.begin(); it != inventari.end(); ++it){
+        for(map<string,Especie>::iterator it1 = it; it1 != inventari.end(); ++it1){
+            if(it->first != it1->first){
+                string id1 = it->first;
+                string id2 = it1->first;
+                double dist = it->second.consultar_distancia(id2);
+                clusters.afegir_dist_cluster(id1,id2,dist);
+            }
+            else clusters.afegir_cluster(it->first);
+        }
+    }
+}
+
 void Cjt_especies::llegir_cjt_especies(){
     inventari.clear();
     int n;

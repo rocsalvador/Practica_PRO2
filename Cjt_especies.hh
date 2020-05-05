@@ -5,14 +5,12 @@
 #define CJT_ESPECIES
 
 #include "Especie.hh"
-
-using namespace std;
+#include "Cjt_clusters.hh"
 
 class Cjt_especies{
 private:
     ///Conjunt d'especies
     map<string,Especie> inventari;
-    
 public:
     //Creadora:
     
@@ -65,6 +63,11 @@ public:
      * \pre Cert
      * \post S'han imprès les espècies pel canal estàndard de sortida*/
     void escriure_cjt_especies() const;
+    
+    /** @brief Inicialitza el cjt de clusters amb el cjt d'especies actual
+     * \pre Cert
+     * \post El paràmetre explícit ha quedat creat amb les dades del paràmetre implícit */
+    void inicialitza_clusters(Cjt_clusters& clusters);
 
     /** @brief Retorna el numero d'espècies del conjunt
      * \pre Cert

@@ -49,8 +49,8 @@ public:
     double consultar_distancia(const string& id) const;
 
     /** @brief Imprimeix les distàncies amb la resta d'espècies
-     * \pre Cert
-     * \post S'han imprès totes les distàncies del paràmetre implícit */
+    * \pre Cert
+    * \post S'han imprès totes les distàncies del paràmetre implícit */
     void imprimir_distancies() const;
 
     //Modificadores:
