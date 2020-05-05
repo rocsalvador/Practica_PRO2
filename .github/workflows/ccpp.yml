@@ -1,0 +1,27 @@
+name: C/C++ CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: configure
+      run: ./configure
+    - name: make
+      run: make
+    - name: run
+      run: ./program.exe < sample.inp > sample.out
+    - name: comparar
+      run: diff -b sample.cor sample.out
+    - name: run
+      run: ./program.exe < sample1.inp > sample.out
+    - name: comparar
+      run: diff -b sample1.cor sample.out
