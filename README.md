@@ -5,31 +5,31 @@ Volem crear un programa per...
 
 ## Com executar el codi
 ### Linux
--Requisits:
+**Requisits:**
 
-  Make, instal·lable executant `sudo apt install make` a la terminal
+Make, instal·lable executant `sudo apt install make` a la terminal
   
-  G++, instal·lable executant `sudo apt install g++` a la terminal
+G++, instal·lable executant `sudo apt install g++` a la terminal
   
--Execució
+**Execució**
 
-  Obrir la terminal a la carpeta on tinguem els fitxers:
+Obrir la terminal a la carpeta on tinguem els fitxers:
   
-  `make` , per compilar i crear el fitxer executable
+`make` , per compilar i crear el fitxer executable
   
-  `./program.exe`, per executar el programa
+`./program.exe`, per executar el programa
 
-  ·Opcional per provar el programa:
+*Opcional per provar el programa:*
   
-    `./program.exe < sample1.inp > sample.out`
+    ./program.exe < sample1.inp > sample.out
     
-    `diff -b sample1.cor sample.out`
+    diff -b sample1.cor sample.out
     
-   Si no ens surt cap missatge d'error el programa és correcte
+Si no ens surt cap missatge d'error el programa és correcte
     
-  //A L'EXECUTAR EL PROGRAMA EL PRIMER VALOR QUE S'INTRODUEIX ÉS K\\
+//A L'EXECUTAR EL PROGRAMA EL PRIMER VALOR QUE S'INTRODUEIX ÉS K\\
   
-  ·Instruccions al programa:
+**Instruccions al programa:**
     1- lee_cjt_especies , seguit del número d'espècies que volem introduir
     
   
