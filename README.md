@@ -30,62 +30,62 @@ Si no ens surt cap missatge d'error el programa és correcte
   
 **Instruccions del programa:**
 
-1. *lee_cjt_especies:
+1. *lee_cjt_especies*
 
         Input: n (número d'espècies a introduir), seguit de l'id i el gen de cada espècie
 
-2. *crea_especie
+2. *crea_especie*
     
         Input: id i gen de l'espècie
     
-3. *tabla_distancias
+3. *tabla_distancias*
 
         Output: Imprimeix les distàncies entre espècies del cjt d'espècies
     
-4. *elimina_especie
+4. *elimina_especie*
 
         Input: id de l'espècie
   
-5. *distancia
+5. *distancia*
 
         Input: id de les dues espècies
     
         Output: Distància entre les dues espècies
   
-6. *obtener_gen
+6. *obtener_gen*
 
         Input: id de l'espècie
     
         Output: Gen de l'epècie
     
-7. *existe_especie
+7. *existe_especie*
 
         Input: id de l'espècie
     
         Output: SI si existeix, NO sinó
     
-8. *imprime_cjt_especies
+8. *imprime_cjt_especies*
 
         Output: Cjt d'ids de les espècies i les seves respectives distàncies
 
-9. *inicializa_clusters
+9. *inicializa_clusters*
 
         Output: Cjt d'ids dels clusters i les seves respectives distàncies
     
-10. *ejecuta_paso_wpgma
+10. *ejecuta_paso_wpgma*
 
         Output: Cjt d'ids dels clusters i les seves respectives distàncies
     
-11. *imprime_arbol_filogenetico
+11. *imprime_arbol_filogenetico*
 
         Output: Arbre dels clusters i les distàncies amb els fills
      
-12. *imprime_cluster
+12. *imprime_cluster*
 
         Input: id del cluster
 
         Output: Arbre del cluster i les distàncies amb els seus fills
 
-13. *fin
+13. *fin*
     
   
