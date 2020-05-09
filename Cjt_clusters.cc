@@ -1,3 +1,6 @@
+/** @file Cjt_clusters.cc
+ * @brief Implementació de la classe Cjt_clusters */
+
 #include "Cjt_clusters.hh"
 
 void imprimir_arbre(const BinTree<pair<string,double>>& arbre){
@@ -94,7 +97,7 @@ void Cjt_clusters::imprimeix_arbre_filogenetic(){
     while(distancies.size() > 1){
         pas_wpgma();
     }
-    imprimir_arbre(colleccio_clusters.find(distancies.begin()->first)->second);
+    imprimir_arbre(colleccio_clusters.begin()->second);
 }
 
 void Cjt_clusters::imprimeix_cluster(const string& id) const{

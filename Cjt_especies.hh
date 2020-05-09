@@ -1,5 +1,5 @@
 /** @file Cjt_especies.hh
-*  @brief Especificació de la classe cjt_especies */
+*  @brief Especificació de la classe Cjt_especies */
 
 #ifndef CJT_ESPECIES
 #define CJT_ESPECIES

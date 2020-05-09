@@ -1,4 +1,4 @@
-/** @file main.cc
+/** @file program.cc
 *  @brief Programa que conté el main que consisteix en donar diferents operacions */
 
 #include "Cjt_especies.hh"
@@ -11,6 +11,7 @@
  * \subsection cjt_c - Cjt_clusters
 */
 
+///Variable k per definir kmers
 int Especie::k;
 
 /** @brief Main amb totes les operacions que requereix la pràctica */

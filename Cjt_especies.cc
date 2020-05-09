@@ -1,3 +1,6 @@
+/** @file Cjt_especies.cc
+ * @brief Implementació de la classe Cjt_especies.cc */
+
 #include "Cjt_especies.hh"
 
 Cjt_especies::Cjt_especies(){}

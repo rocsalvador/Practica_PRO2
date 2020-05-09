@@ -1,5 +1,5 @@
 /** @file Cjt_clusters.hh
-*  @brief Especificació de la classe cjt_clusters */
+*  @brief Especificació de la classe Cjt_clusters */
 
 #ifndef CJT_CLUSTERS
 #define CJT_CLUSTERS

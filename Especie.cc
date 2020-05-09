@@ -1,3 +1,6 @@
+/** @file Especie.cc
+ * @brief Implementació de la classe Especie */
+
 #include "Especie.hh"
 
 Especie::Especie(){}
