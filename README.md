@@ -1,7 +1,8 @@
 # Practica Primavera 2020
 
 ## Enunciat de la pràctica
-Volem crear un programa per...
+Volem crear un programa per tal de gestionar un conjunt d'espècies, amb dos atributs identificador i gen, calcular les distàncies
+entre espècies i generar un arbre filogenètic.
 
 ## Com executar el codi
 ### Linux

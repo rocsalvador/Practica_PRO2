@@ -32,7 +32,7 @@ public:
     //Modificadores
 
     /** @brief Executa un pas de l'algorisme WPGMA amb el cjt_clusters actual
-    *  \pre Cert
+    *  \pre clusters.size() >= 1
     *  \post El cjt_clusters ha quedat actualitzat si la mida de cjt de distàncies > 1*/
     void pas_wpgma();
 
