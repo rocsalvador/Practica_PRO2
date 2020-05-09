@@ -79,6 +79,9 @@
 
             BinTree<pair<string,double>> nou_cluster(make_pair(id_nou_cluster,dist_fills), 
                 colleccio_clusters.find(min_dist.first)->second, colleccio_clusters.find(min_dist.second)->second);
+            
+            colleccio_clusters.erase(min_dist.first);
+            colleccio_clusters.erase(min_dist.second);
 
             colleccio_clusters.insert(make_pair(id_nou_cluster,nou_cluster));
         }

@@ -18,6 +18,7 @@ string Cjt_especies::obtenir_gen(const string& id) const{
 }
 
 void Cjt_especies::inicialitza_clusters(Cjt_clusters& clusters){
+    clusters.neteja_clusters();
     for(map<string,Especie>::iterator it = inventari.begin(); it != inventari.end(); ++it){
         for(map<string,Especie>::iterator it1 = it; it1 != inventari.end(); ++it1){
             if(it->first != it1->first){
