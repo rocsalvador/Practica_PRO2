@@ -40,7 +40,7 @@ Si no ens surt cap missatge d'error el programa és correcte
     
 3. *tabla_distancias*
 
-        Output: Imprimeix les distàncies entre espècies del cjt d'espècies
+        Output: Distàncies entre espècies del cjt d'espècies
     
 4. *elimina_especie*
 
@@ -62,7 +62,7 @@ Si no ens surt cap missatge d'error el programa és correcte
 
         Input: id de l'espècie
     
-        Output: SI si existeix, NO sinó
+        Output: SI si existeix, NO si no
     
 8. *imprime_cjt_especies*
 
