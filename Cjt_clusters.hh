@@ -73,6 +73,9 @@ public:
     *  \post S'han imprès totes les distàncies pel canal estàndard de sortida */
     void imprimir_taula_distancies() const;
 
+    /** @brief Retorna el numero de clusters de la taula de distàncies
+     * \pre Cert
+     * \post S'ha retornat la mida del paràmetre implícit */
     int num_clusters() const;
 
     //Destructora:
