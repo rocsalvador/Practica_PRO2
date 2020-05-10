@@ -22,9 +22,9 @@ Obrir la terminal a la carpeta on tinguem els fitxers:
 
 *Opcional per provar el programa:*
   
-    ./program.exe < sample1.inp > sample.out
+    ./program.exe < ./Samples/sample1.inp > sample.out
     
-    diff -b sample1.cor sample.out
+    diff -b ./Samples/sample1.cor sample.out
     
 Si no ens surt cap missatge d'error el programa és correcte
   
