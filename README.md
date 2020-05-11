@@ -29,6 +29,7 @@ Obrir la terminal a la carpeta on tinguem els fitxers:
 Si no ens surt cap missatge d'error el programa és correcte
   
 **Instruccions del programa:**
+
 *El primer valor que s'introdueix és k*
 
 1. *lee_cjt_especies*
