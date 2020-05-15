@@ -67,7 +67,7 @@ public:
     /** @brief Inicialitza el cjt de clusters amb el cjt d'especies actual
      * \pre Cert
      * \post El paràmetre explícit ha quedat creat amb les dades del paràmetre implícit */
-    void inicialitza_clusters(Cjt_clusters& clusters);
+    void inicialitza_clusters(Cjt_clusters& clusters) const;
 
     /** @brief Retorna el numero d'espècies del conjunt
      * \pre Cert

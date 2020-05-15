@@ -9,8 +9,7 @@ void Especie::definir_k(int k_in){
     k = k_in;
 }
 
-Especie::Especie(string gen){
-    this->gen = gen;
+void Especie::calcular_kmer(){
     for(int i = 0; i < gen.size() - (k-1); ++i){
         string part1="";
         for(int j = i; j < k + i; ++j){
@@ -24,11 +23,17 @@ Especie::Especie(string gen){
         }
     }
 }
+
+Especie::Especie(const string& gen){
+    this->gen = gen;
+    calcular_kmer();
+}
+
 string Especie::consultar_gen() const{
     return gen;
 }
 
-void Especie::distancia(const Especie& esp, string id){
+void Especie::distancia(const Especie& esp, const string& id){
     double unio = 0;
     double inters = 0;
 

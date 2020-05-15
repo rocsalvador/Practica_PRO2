@@ -15,18 +15,18 @@ void imprimir_arbre(const BinTree<pair<string,double>>& arbre){
 
 Cjt_clusters::Cjt_clusters(){}
 
-void Cjt_clusters::afegir_dist_cluster(string id1, string id2, double dist){
+void Cjt_clusters::afegir_dist_cluster(const string& id1, const string& id2, const double& dist){
     distancies.find(id1)->second.insert(make_pair(id2,dist));
 }
 
-void Cjt_clusters::afegir_cluster(string id){
+void Cjt_clusters::afegir_cluster(const string& id){
     map<string,double> aux;
     distancies.insert(make_pair(id,aux));
     BinTree<pair<string,double>> arbre(make_pair(id,-1));
     colleccio_clusters.insert(make_pair(id,arbre));
 }
 
-void Cjt_clusters::pas_wpgma(){
+pair<string,string> Cjt_clusters::calcular_min_dist(){
     pair<string,string> min_dist;
     double dist_min = 101;
     for(map<string,dist_cluster>::iterator it = distancies.begin(); it != distancies.end(); ++it){
@@ -38,11 +38,11 @@ void Cjt_clusters::pas_wpgma(){
             }
         }
     }
+    return min_dist;
+}
 
-    double dist_fills = distancies.find(min_dist.first)->second.find(min_dist.second)->second/2;
+void Cjt_clusters::recalcular_distancia_wpgma(const pair<string,string>& min_dist, map<string,double>& dist_nou_cluster){
     string id_nou_cluster = min_dist.first + min_dist.second;
-    map<string,double> dist_nou_cluster;
-
     for(map<string,dist_cluster>::iterator it = distancies.begin(); it != distancies.end(); ++it){
         double dist;
         if(it->first != min_dist.first and it->first != min_dist.second){
@@ -74,6 +74,16 @@ void Cjt_clusters::pas_wpgma(){
             }
         }
     }
+}
+
+void Cjt_clusters::pas_wpgma(){
+    pair<string,string> min_dist = calcular_min_dist();
+
+    double dist_fills = distancies.find(min_dist.first)->second.find(min_dist.second)->second/2;
+    string id_nou_cluster = min_dist.first + min_dist.second;
+    map<string,double> dist_nou_cluster;
+
+    recalcular_distancia_wpgma(min_dist, dist_nou_cluster);
 
     distancies.erase(min_dist.first);
     distancies.erase(min_dist.second);

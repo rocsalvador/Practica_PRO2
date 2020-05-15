@@ -20,10 +20,10 @@ string Cjt_especies::obtenir_gen(const string& id) const{
     return inventari.find(id)->second.consultar_gen();
 }
 
-void Cjt_especies::inicialitza_clusters(Cjt_clusters& clusters){
+void Cjt_especies::inicialitza_clusters(Cjt_clusters& clusters) const{
     clusters.neteja_clusters();
-    for(map<string,Especie>::iterator it = inventari.begin(); it != inventari.end(); ++it){
-        for(map<string,Especie>::iterator it1 = it; it1 != inventari.end(); ++it1){
+    for(map<string,Especie>::const_iterator it = inventari.begin(); it != inventari.end(); ++it){
+        for(map<string,Especie>::const_iterator it1 = it; it1 != inventari.end(); ++it1){
             if(it->first != it1->first){
                 string id1 = it->first;
                 string id2 = it1->first;

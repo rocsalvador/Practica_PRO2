@@ -21,6 +21,10 @@ private:
     /// Arbres dels diferents clusters amb la distància amb els seus fills
     map<string,BinTree<pair<string,double>>> colleccio_clusters;
 
+    pair<string,string> calcular_min_dist();
+
+    void recalcular_distancia_wpgma(const pair<string,string>& min_dist, map<string,double>& dist_nou_cluster);
+
 public:
     //Creadora:
 
@@ -44,12 +48,12 @@ public:
     /** @brief Afegeix un nou cluster al cjt de clusters o afegeix una distància amb una altrea espècie
      * \pre dist >= 0 i id1 != id2
      * \post S'ha afegit dist al paràmetre implícit entre id1 id2 */
-    void afegir_dist_cluster(string id1, string id2, double dist);
+    void afegir_dist_cluster(const string& id1, const string& id2, const double& dist);
 
     /** @brief Afegeix un nou cluster al cjt de clusters
      * \pre id no present al paràmetre implícit
      * \post S'ha afegit el cluster id al paràmetre implícit */
-    void afegir_cluster(string id);
+    void afegir_cluster(const string& id);
 
     /** @brief Elimina tots els elements de la classe cjt clusters
      * \pre Cert

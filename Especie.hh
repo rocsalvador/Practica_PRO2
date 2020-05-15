@@ -21,7 +21,9 @@ private:
     map<string,int> kmer;
     ///k per crear els kmers
     static int k;
-    
+
+    void calcular_kmer();
+
 public:
     
     //Creadores:
@@ -34,7 +36,7 @@ public:
     /** @brief Creadora
     * \pre gen.size() >= k
     * \post L'especie s'ha creat amb this->gen = gen i amb el kmer amb el parametre k */
-    Especie(string gen);
+    Especie(const string& gen);
 
     //Consultores:
 
@@ -58,7 +60,7 @@ public:
     /** @brief Calcula la distància amb l'espècie del paràmetre
     * \pre Esp té el gen definit
     * \post S'ha afegit a la taula de distancies la distancia amb esp */
-    void distancia(const Especie& esp, string id);
+    void distancia(const Especie& esp, const string& id);
 
     /** @brief Elimina la distància amb l'espècie id
     * \pre Id ha d'estar al cjt de distàncies
