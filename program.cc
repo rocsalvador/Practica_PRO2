@@ -4,7 +4,7 @@
 #include "Cjt_especies.hh"
 #include "Cjt_clusters.hh"
 
-/** \mainpage Especificació de les classes i el main de la pràctica. 
+/** \mainpage Especificació de les classes i el main de la pràctica.
  * \section classes Classes:
  * \subsection esp - Especie
  * \subsection cjt_e - Cjt_especies
@@ -19,7 +19,7 @@ int main(){
     int k;
     cin >> k;
     Especie::definir_k(k);
-    
+
     Cjt_especies especies;
     Cjt_clusters clusters;
 
@@ -49,7 +49,7 @@ int main(){
             if(especies.existeix_especie(id) and especies.existeix_especie(id2)){
                 if(id != id2) cout << especies.consultar_distancia(id,id2) << endl;
                 else cout << 0 << endl;
-            } 
+            }
             else{
                 cout << "ERROR: La especie ";
                 if(especies.existeix_especie(id)) cout << id2 << " no existe.";

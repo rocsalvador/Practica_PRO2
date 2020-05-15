@@ -23,8 +23,8 @@ private:
 
 public:
     //Creadora:
-    
-    /** @brief Constructora per defecte 
+
+    /** @brief Constructora per defecte
      * \pre Cert
      * \post S'ha creat un cjt de clusters buit*/
     Cjt_clusters();
@@ -55,11 +55,11 @@ public:
      * \pre Cert
      * \post El paràmatre implícit ha quedat buit */
     void neteja_clusters();
-    
+
     //Consultores:
-    
+
     /** @brief Imprimeix el clúster amb l'id donat
-    *  \pre Existeix un clúster amb this->id = id 
+    *  \pre Existeix un clúster amb this->id = id
     *  \post S'ha imprès l'id i estructura arbòrea del clúster pel canal estàndard de sortida */
     void imprimeix_cluster(const string& id) const;
 
@@ -79,8 +79,8 @@ public:
     int num_clusters() const;
 
     //Destructora:
-    
-    /** @brief Desctructora per defecte 
+
+    /** @brief Desctructora per defecte
      * \pre Cert
      * \post S'ha eliminat el cjt de clusters*/
     ~Cjt_clusters();
