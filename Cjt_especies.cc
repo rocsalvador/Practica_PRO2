@@ -67,6 +67,7 @@ void Cjt_especies::eliminar_especie(const string& id){
 
 double Cjt_especies::consultar_distancia(const string& id_1, const string& id_2) const{
     if(id_1 < id_2) return inventari.find(id_1)->second.consultar_distancia(id_2);
+    else if(id_1 == id_2) return 0;
     else return inventari.find(id_2)->second.consultar_distancia(id_1);
 }
 

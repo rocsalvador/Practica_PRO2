@@ -11,17 +11,27 @@
 
 using namespace std;
 
+/** @class Especie
+ * @brief Representa una espècie amb els seus atributs i 
+ * les seves operacions.
+ * 
+ * Conté les operacions per tal de poder generar els kmers
+ * a partir del seu gen i així poder calcular les distàncies
+ * amb altres espècies. */
 class Especie{ 
 private:
     ///Gen de l'espècie
     string gen;
-    ///Distàncies de les espècies amb la resta
+    ///Distàncies de l'espècie amb la resta
     map<string,double> distancies;
-    ///kmer
+    ///kmers
     map<string,int> kmer;
     ///k per crear els kmers
     static int k;
 
+    /** @brief Calcula el kmer de l'espècie a partir del valor k i el gen propi
+     * \pre gen.size() >= k
+     * \post S'ha creat un map amb tots els kmers del gen amb la seva freqüència corresponent */
     void calcular_kmer();
 
 public:
@@ -58,7 +68,7 @@ public:
     //Modificadores:
 
     /** @brief Calcula la distància amb l'espècie del paràmetre
-    * \pre Esp té el gen definit
+    * \pre Esp té el kmer definit i id != this->id
     * \post S'ha afegit a la taula de distancies la distancia amb esp */
     void distancia(const Especie& esp, const string& id);
 

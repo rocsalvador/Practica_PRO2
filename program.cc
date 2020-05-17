@@ -47,8 +47,7 @@ int main(){
             cin >> id >> id2;
             cout << "# " << op << " " << id << " " << id2 << endl;
             if(especies.existeix_especie(id) and especies.existeix_especie(id2)){
-                if(id != id2) cout << especies.consultar_distancia(id,id2) << endl;
-                else cout << 0 << endl;
+                cout << especies.consultar_distancia(id,id2) << endl;
             }
             else{
                 cout << "ERROR: La especie ";

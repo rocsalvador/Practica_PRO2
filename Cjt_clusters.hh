@@ -12,7 +12,13 @@
 
 using namespace std;
 
-
+/** @class Cjr_clusters
+ * @brief Representa el conjunt de clusters i les operacions
+ * que aquests permeten.
+ * 
+ * Conté totes les operacions necessàries perquè es pugui executar
+ * l'algorisme WPGMA a partir d'un conjunt d'espècies i generar 
+ * l'arbre filogenètic. */
 class Cjt_clusters{
 private:
     typedef map<string,double> dist_cluster;
@@ -21,8 +27,14 @@ private:
     /// Arbres dels diferents clusters amb la distància amb els seus fills
     map<string,BinTree<pair<string,double>>> colleccio_clusters;
 
+    /** @brief 
+     * \pre Número de clusters > 1
+     * \post S'ha retornat els strings dels clusters a menor distància */
     pair<string,string> calcular_min_dist();
 
+    /** @brief
+     * \pre Min_dist conté dos ids del cjt de clusters i mida de clusters > 1
+     * \post S'ha actualitzat la taula de distàncies afegint el nou cluster i eliminant els dos antics */
     void recalcular_distancia_wpgma(const pair<string,string>& min_dist, map<string,double>& dist_nou_cluster);
 
 public:

@@ -7,6 +7,13 @@
 #include "Especie.hh"
 #include "Cjt_clusters.hh"
 
+/** @class Cjt_especies
+ * @brief Representa el conjunt d'espècies i les operacions
+ * que permet.
+ * 
+ * Conté les operacions necessàries per poder gestionar
+ * totes les espècies i traspassar tota la informació
+ * necessària al conjunt de clusters. */
 class Cjt_especies{
 private:
     ///Conjunt d'especies
@@ -34,7 +41,7 @@ public:
 
     /** @brief Llegeix n espècies i les afegeix al conjunt
      * \pre n>=0
-     * \post S'han afegit les espècies llegides pel canal estàndard d'entrada al parametre implícit */
+     * \post S'han esborrat les espècies anteriors i s'han afegit les espècies llegides al parametre implícit */
     void llegir_cjt_especies();
 
     //Consultores:
