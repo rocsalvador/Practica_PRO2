@@ -15,6 +15,8 @@ using namespace std;
  * @brief Representa una espècie amb els seus atributs i 
  * les seves operacions.
  * 
+ * Una espècie està definida pel seu gen i un identificador.
+ * 
  * Conté les operacions per tal de poder generar els kmers
  * a partir del seu gen i així poder calcular les distàncies
  * amb altres espècies. */
@@ -45,7 +47,7 @@ public:
 
     /** @brief Creadora
     * \pre gen.size() >= k
-    * \post L'especie s'ha creat amb this->gen = gen i amb el kmer amb el parametre k */
+    * \post L'especie s'ha creat amb this->gen = gen i s'ha generat el kmer */
     Especie(const string& gen);
 
     //Consultores:
@@ -67,9 +69,9 @@ public:
 
     //Modificadores:
 
-    /** @brief Calcula la distància amb l'espècie del paràmetre
+    /** @brief Calcula la distància amb l'espècie del paràmetre esplícit i l'afegeix al paràmetre implícit
     * \pre Esp té el kmer definit i id != this->id
-    * \post S'ha afegit a la taula de distancies la distancia amb esp */
+    * \post S'ha afegit a la taula de distancies la distància amb esp */
     void distancia(const Especie& esp, const string& id);
 
     /** @brief Elimina la distància amb l'espècie id

@@ -13,10 +13,12 @@
  * 
  * Conté les operacions necessàries per poder gestionar
  * totes les espècies i traspassar tota la informació
- * necessària al conjunt de clusters. */
+ * necessària al conjunt de clusters. 
+ * 
+ * Les distàncies només s'aguarden a l'espècie amb id més petit. */
 class Cjt_especies{
 private:
-    ///Conjunt d'especies
+    ///Conjunt d'especies, que no guarden distàncies repetides
     map<string,Especie> inventari;
 public:
     //Creadora:
@@ -29,18 +31,20 @@ public:
     //Modificadores:
 
     /** @brief Crea una especie i l'afegeix al parametre implicit
-     * \pre La nova espècie no està al paràmetre implícit
-     * \post La nova especie s'ha afegit al parametre implicit i les distancies de la nova espècie amb la resta s'han actualitzat */
+     * \pre La nova espècie id no està al paràmetre implícit
+     * \post La nova especie s'ha afegit al parametre implicit, s'han afegit a les espècies amb identificador < id
+     * la distància amb id i a espècie id s'han afegit les distàncies amb espècies amb identificador > id */
     void afegeix_especie(const string& id, const string& gen);
 
     /** @brief Elimina una especie del parametre implicit
-     * \pre L'especie pertany al parametre implicit
-     * \post L'especie s'ha eliminat del parametre implicit i s'han actualitzat les distàncies de la resta d'espècies del conjunt*/
+     * \pre L'especie id pertany al parametre implicit
+     * \post L'especie id s'ha eliminat del parametre implicit i s'han eliminat les distàncies amb espècie id 
+     * de les espècies amb identificador < id*/
     void eliminar_especie(const string& id);
 
 
     /** @brief Llegeix n espècies i les afegeix al conjunt
-     * \pre n>=0
+     * \pre Cert
      * \post S'han esborrat les espècies anteriors i s'han afegit les espècies llegides al parametre implícit */
     void llegir_cjt_especies();
 
@@ -73,10 +77,11 @@ public:
     
     /** @brief Inicialitza el cjt de clusters amb el cjt d'especies actual
      * \pre Cert
-     * \post El paràmetre explícit ha quedat creat amb les dades del paràmetre implícit */
+     * \post El paràmetre explícit queda igual que la taula de distàncies de les espècies del 
+     * paràmetre implícit */
     void inicialitza_clusters(Cjt_clusters& clusters) const;
 
-    /** @brief Retorna el numero d'espècies del conjunt
+    /** @brief Retorna el número d'espècies del conjunt
      * \pre Cert
      * \post S'ha retornat el valor de la mida del paràmetre implicit */
     int consultar_mida() const;

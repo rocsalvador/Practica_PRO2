@@ -4,11 +4,10 @@
 #include "Cjt_especies.hh"
 #include "Cjt_clusters.hh"
 
-/** \mainpage Especificació de les classes i el main de la pràctica.
- * \section classes Classes:
- * \subsection esp - Especie
- * \subsection cjt_e - Cjt_especies
- * \subsection cjt_c - Cjt_clusters
+/** \mainpage Espècies, clusters i arbres
+ * La pràctica consisteix en implementar un programa que ens permeti
+ * gestionar un conjunt d'espècies, que calculi la distància entre aquestes i així
+ * ens permeti crear un arbre filogenètic mitjançant l'algorisme WPGMA.
 */
 
 ///Variable k per definir kmers

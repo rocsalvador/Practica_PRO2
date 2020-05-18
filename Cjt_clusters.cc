@@ -45,32 +45,35 @@ void Cjt_clusters::recalcular_distancia_wpgma(const pair<string,string>& min_dis
     string id_nou_cluster = min_dist.first + min_dist.second;
     for(map<string,dist_cluster>::iterator it = distancies.begin(); it != distancies.end(); ++it){
         double dist;
-        if(it->first != min_dist.first and it->first != min_dist.second){
-            if(it->first < min_dist.first){
+        string id_actual = it->first;
+        if(id_actual != min_dist.first and id_actual != min_dist.second){
+            if(id_actual < min_dist.first){
                 dist = (it->second.find(min_dist.first)->second+it->second.find(min_dist.second)->second)/2;
                 it->second.erase(min_dist.first);
                 it->second.erase(min_dist.second);
                 it->second.insert(make_pair(id_nou_cluster,dist));
             }
-            else if(it->first < min_dist.second){
+            else if(id_actual < min_dist.second){
                 dist = it->second.find(min_dist.second)->second;
                 it->second.erase(min_dist.second);
-                dist += dist_nou_cluster.find(it->first)->second;
+                auto aux = dist_nou_cluster.find(id_actual);
+                dist += aux->second;
                 dist /= 2;
-                dist_nou_cluster.find(it->first)->second = dist;
+                aux->second = dist;
             }
         }
-        else if(it->first == min_dist.first){
+        else if(id_actual == min_dist.first){
             for(auto it1 = it->second.begin(); it1 != it->second.end(); ++it1){
                 if(it1->first != min_dist.second){
                     dist_nou_cluster.insert(make_pair(it1->first,it1->second));
                 }
             }
         }
-        else if(it->first == min_dist.second){
+        else if(id_actual == min_dist.second){
             for(auto it1 = it->second.begin(); it1 != it->second.end(); ++it1){
-                dist = (dist_nou_cluster.find(it1->first)->second + it1->second)/2;
-                dist_nou_cluster.find(it1->first)->second = dist;
+                auto aux = dist_nou_cluster.find(it1->first);
+                dist = (aux->second + it1->second)/2;
+                aux->second = dist;
             }
         }
     }
