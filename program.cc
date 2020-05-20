@@ -2,13 +2,14 @@
 *  @brief Programa que conté el main que consisteix en donar diferents operacions */
 
 #include "Cjt_especies.hh"
-#include "Cjt_clusters.hh"
 
 /** \mainpage Espècies, clusters i arbres
- * La pràctica consisteix en implementar un programa que ens permeti
+ * \section exp Explicació:
+ * <b> Resum: </b> La pràctica consisteix en implementar un programa que ens permeti
  * gestionar un conjunt d'espècies, que calculi la distància entre aquestes i així
  * ens permeti crear un arbre filogenètic mitjançant l'algorisme WPGMA.
- * 
+ *
+ * \section op Operacions:
  * El programa permet les següents operacions:
  * 
  * - crea_especie: afegeix una espècie al conjunt d'espècies
@@ -37,6 +38,12 @@
  * 
  * - fin: acaba l'execució del programa
  * 
+ * \section inf Informació:
+ * <b> Autor: </b> Roc Salvador Andreazini
+ * 
+ * <b> Grup: </b> 11
+ * 
+ * <b> Quadrimestre primeavera 2020 </b>
 */
 
 ///Variable k per definir kmers
