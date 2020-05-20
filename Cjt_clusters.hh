@@ -25,7 +25,7 @@ using namespace std;
  * La quantitat d'elements de les dues estructures de dades que formen la
  * classe són sempre iguals (els maps, no el BinTree).
  * 
- * Les distàncies només es guarden al cluster amb id més petit. */
+ * Les distàncies entre dos clusters només es guarden al cluster amb id més petit. */
 class Cjt_clusters{
 private:
     typedef map<string,double> dist_cluster;
@@ -36,13 +36,14 @@ private:
 
     /** @brief Retorna els ids dels clusters a menor distància
      * \pre Número de clusters > 1
-     * \post S'ha retornat els strings dels clusters a menor distància */
+     * \post S'ha retornat els strings dels clusters a menor distància ordenats alfabèticament */
     pair<string,string> calcular_min_dist();
 
-    /** @brief 
-     * \pre Min_dist conté dos ids del cjt de clusters i número de clusters > 1
+    /** @brief Actualitza el conjunt de clusters a lpexecutar el pas wpgma
+     * \pre Min_dist conté dos ids del cjt de clusters ordenats alfabèticament i distancies.size() > 1
      * \post S'ha actualitzat la taula de distàncies afegint el nou cluster amb id = id_1 + id_2 (id1 < id2)
-     *  i eliminant els dos antics (id1 i id2) */
+     *  afegit les distàncies amb aquest als clusters amb id < id_nou_cluster i al nou cluster les distàncies
+     * amb id > id_nou_cluster*/
     void recalcular_distancia_wpgma(const pair<string,string>& min_dist, map<string,double>& dist_nou_cluster);
 
 public:
@@ -56,9 +57,11 @@ public:
     //Modificadores
 
     /** @brief Executa un pas de l'algorisme WPGMA amb el cjt_clusters actual
-    *  \pre clusters.size() > 1
-    *  \post El cjt_clusters ha quedat actualitzat amb un nou cluster a la taula distàncies i a l'arbre, eliminant els seus fills
-    * dels maps i linkejant al BinTree el cluster pare amb els fills */
+    *  \pre distancies.size() > 1
+    *  \post El cjt_clusters ha quedat actualitzat amb un nou cluster a la taula distàncies i a l'arbre, també s'han eliminat
+    * els fills del nou cluster als dos maps. A la taula de distàncies: s'han eliminat les distàncies dels fills que hi havia a la 
+    * taula i s'han afegit les distàncies del nou cluster als clusters amb id < id_nou_cluster i al nou_cluster els clusters amb 
+    * id > id_nou_cluster.*/
     void pas_wpgma();
 
     /** @brief Imprimeix l'arbre després d'executar tot l'algorisme WPGMA
@@ -69,12 +72,12 @@ public:
 
     /** @brief Afegeix una distància amb una altra espècie
      * \pre dist >= 0 i id1 != id2
-     * \post S'ha afegit dist al map de distàncies d'id1 la distància amb id2 */
+     * \post S'ha afegit (ordenat alfabèticament) dist al map de distàncies d'id1 la distància amb id2 */
     void afegir_dist_cluster(const string& id1, const string& id2, const double& dist);
 
     /** @brief Afegeix un nou cluster al cjt de clusters
      * \pre id no present al paràmetre implícit
-     * \post S'ha afegit el cluster id al paràmetre implícit */
+     * \post S'ha afegit (ordenat alfabèticament) el cluster id a l'arbre i a la taula de distàncies */
     void afegir_cluster(const string& id);
 
     /** @brief Elimina tots els elements de la classe cjt clusters

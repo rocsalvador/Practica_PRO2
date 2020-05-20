@@ -3,6 +3,9 @@
 
 #include "Cjt_clusters.hh"
 
+/** @brief Imprimeix un arbre
+ * \pre El double de les fulles és igual a -1
+ * \post S'ha imprès l'arbre pel canal estàndard de sortida */
 void imprimir_arbre(const BinTree<pair<string,double>>& arbre){
     if(arbre.value().second == -1) cout << "[" << arbre.value().first << "]";
     else{
