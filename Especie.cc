@@ -3,7 +3,7 @@
 
 #include "Especie.hh"
 
-void Especie::definir_k(int k_in){
+void Especie::definir_k(const int& k_in){
     k = k_in;
 }
 

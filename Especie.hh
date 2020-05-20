@@ -17,6 +17,8 @@ using namespace std;
  * 
  * Una espècie està definida pel seu gen i un identificador.
  * 
+ * Les distàncies de la taula de distàncies i els kmers estan sempre ordenades alfabèticament
+ * 
  * Conté les operacions per tal de poder generar els kmers
  * a partir del seu gen i així poder calcular les distàncies
  * amb altres espècies. */
@@ -24,7 +26,7 @@ class Especie{
 private:
     ///Gen de l'espècie
     string gen;
-    ///Distàncies de l'espècie amb la resta ordenades alfabèticament
+    ///Distàncies de l'espècie amb la resta
     map<string,double> distancies;
     ///kmers
     map<string,int> kmer;
@@ -38,7 +40,7 @@ private:
 
 public:
     
-    //Creadores:
+    //Creadora:
 
     /** @brief Creadora
     * \pre gen.size() >= k
@@ -79,7 +81,7 @@ public:
     /** @brief Defineix el valor de k
      * \pre k > 0
      * \post Static k = k; */
-    static void definir_k(int k);
+    static void definir_k(const int& k);
 
     //Destructora per defecte:
 

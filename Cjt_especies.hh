@@ -15,6 +15,8 @@
  * totes les espècies i traspassar tota la informació
  * necessària al conjunt de clusters. 
  * 
+ * Les dades de la taula de distàncies estan sempre ordenades alfabèticament
+ * 
  * Les distàncies només s'aguarden a l'espècie amb id més petit. */
 class Cjt_especies{
 private:
@@ -32,7 +34,7 @@ public:
 
     /** @brief Crea una especie i l'afegeix al parametre implicit
      * \pre La nova espècie id no està al paràmetre implícit
-     * \post La nova especie s'ha afegit al parametre implicit ordenat alfabèticament, s'han afegit a les espècies amb identificador 
+     * \post La nova especie s'ha afegit (ordenat alfabèticament) al parametre implicit, s'han afegit a les espècies amb identificador 
      * < id la distància amb espeècie id i a espècie id s'han afegit les distàncies amb espècies amb identificador > id */
     void afegeix_especie(const string& id, const string& gen);
 

@@ -22,8 +22,7 @@ using namespace std;
  * l'algorisme WPGMA a partir d'un conjunt d'espècies i generar 
  * l'arbre filogenètic.
  * 
- * La quantitat d'elements de les dues estructures de dades que formen la
- * classe són sempre iguals (els maps, no el BinTree).
+ * Les dades de les estructures de dades del conjunt sempre estan ordenades alfabèticament
  * 
  * Les distàncies entre dos clusters només es guarden al cluster amb id més petit. */
 class Cjt_clusters{
@@ -59,14 +58,14 @@ public:
     /** @brief Executa un pas de l'algorisme WPGMA amb el cjt_clusters actual
     *  \pre distancies.size() > 1
     *  \post El cjt_clusters ha quedat actualitzat amb un nou cluster a la taula distàncies i a l'arbre, també s'han eliminat
-    * els fills del nou cluster als dos maps. A la taula de distàncies: s'han eliminat les distàncies dels fills que hi havia a la 
-    * taula i s'han afegit les distàncies del nou cluster als clusters amb id < id_nou_cluster i al nou_cluster els clusters amb 
-    * id > id_nou_cluster.*/
+    * els fills del nou cluster de la taula de distàncies i la col·lecció. A la taula de distàncies: s'han eliminat les distàncies dels 
+    * fills que hi havia a la taula i s'han afegit les distàncies del nou cluster als clusters amb id < id_nou_cluster i al 
+    * nou_cluster els clusters amb id > id_nou_cluster.*/
     void pas_wpgma();
 
     /** @brief Imprimeix l'arbre després d'executar tot l'algorisme WPGMA
     *  \pre Cert
-    *  \post Les estrcutures on es guarda el cjt_clusters s'han quedat amb un sol element (el cluster arrel), l'arbre filogenètic ha 
+    *  \post La taula de distàncies i la col·lecció s'han quedat amb un sol element (el cluster arrel), l'arbre filogenètic ha 
     * quedat completat i aquest s'ha imprès pel canal estàndard de sortida */
     void imprimeix_arbre_filogenetic();
 
