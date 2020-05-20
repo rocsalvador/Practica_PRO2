@@ -62,8 +62,21 @@ public:
 
     /** @brief Calcula la distancia entre dues espècies
      * \pre Els paràmetres pertanyen al paràmetre implicit
-     * \post S'ha retornat la distancia entre les dues especies */
+     * \post S'ha retornat la distancia entre les dues espècies */
     double consultar_distancia(const string& id_1,const string& id_2) const;
+    
+    /** @brief Inicialitza el cjt de clusters amb el cjt d'especies actual
+     * \pre Cert
+     * \post El paràmetre explícit ha quedat igual que la taula de distàncies de les espècies del 
+     * paràmetre implícit */
+    void inicialitza_clusters(Cjt_clusters& clusters) const;
+
+    /** @brief Retorna el número d'espècies del conjunt
+     * \pre Cert
+     * \post S'ha retornat el valor de la mida del paràmetre implicit */
+    int consultar_mida() const;
+
+    //Lectura/escriptura:
 
     /** @brief Imprimeix totes les distàncies del conjunt d'espècies
      * \pre Cert
@@ -74,17 +87,6 @@ public:
      * \pre Cert
      * \post S'han imprès les espècies pel canal estàndard de sortida*/
     void escriure_cjt_especies() const;
-    
-    /** @brief Inicialitza el cjt de clusters amb el cjt d'especies actual
-     * \pre Cert
-     * \post El paràmetre explícit queda igual que la taula de distàncies de les espècies del 
-     * paràmetre implícit */
-    void inicialitza_clusters(Cjt_clusters& clusters) const;
-
-    /** @brief Retorna el número d'espècies del conjunt
-     * \pre Cert
-     * \post S'ha retornat el valor de la mida del paràmetre implicit */
-    int consultar_mida() const;
     
     //Destructora:
 

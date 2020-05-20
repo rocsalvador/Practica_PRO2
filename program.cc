@@ -8,6 +8,35 @@
  * La pràctica consisteix en implementar un programa que ens permeti
  * gestionar un conjunt d'espècies, que calculi la distància entre aquestes i així
  * ens permeti crear un arbre filogenètic mitjançant l'algorisme WPGMA.
+ * 
+ * El programa permet les següents operacions:
+ * 
+ * - crea_especie: afegeix una espècie al conjunt d'espècies
+ * 
+ * - obtener_gen: retorna el gen de l'espècie que es demana
+ * 
+ * - distancia: retorna la distància entre les dues espècies indicades
+ * 
+ * - elimina_especie: elimina l'espècie indicada del conjunt d'espècies
+ * 
+ * - existe_especie: retorna si l'espècie està present al conjunt
+ * 
+ * - lee_cjt_especies: llegeix un número d'espècies donat
+ * 
+ * - imprime_cjt_especies: imprimeix el conjunt amb el gen de cada espècie
+ * 
+ * - tabla_distancias: imprimeix les distàncies entre totes les espècies
+ * 
+ * - inicializa_clusters: inicialitza el conjunt de clusters a partir de les espècies actuals
+ * 
+ * - ejecuta_paso_wpgma: executa un pas de l'algorisme WPGMA al conjunt de clusters
+ * 
+ * - imprime_arbol_filogenetico: imprimeix l'arbre que formen el conjunt de clusters actual
+ * 
+ * - imprime_cluster: imprimeix el cluster donat
+ * 
+ * - fin: acaba l'execució del programa
+ * 
 */
 
 ///Variable k per definir kmers

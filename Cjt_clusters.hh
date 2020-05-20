@@ -37,7 +37,7 @@ private:
     /** @brief Retorna els ids dels clusters a menor distància
      * \pre Número de clusters > 1
      * \post S'ha retornat els strings dels clusters a menor distància ordenats alfabèticament */
-    pair<string,string> calcular_min_dist();
+    pair<string,string> calcular_min_dist() const;
 
     /** @brief Actualitza el conjunt de clusters a lpexecutar el pas wpgma
      * \pre Min_dist conté dos ids del cjt de clusters ordenats alfabèticament i distancies.size() > 1
@@ -66,13 +66,13 @@ public:
 
     /** @brief Imprimeix l'arbre després d'executar tot l'algorisme WPGMA
     *  \pre Cert
-    *  \post Els maps s'han quedat amb un sol element (el cluster arrel), l'arbre filogenètic ha quedat completat i
-    * aquest s'ha imprès pel canal estàndard de sortida */
+    *  \post Les estrcutures on es guarda el cjt_clusters s'han quedat amb un sol element (el cluster arrel), l'arbre filogenètic ha 
+    * quedat completat i aquest s'ha imprès pel canal estàndard de sortida */
     void imprimeix_arbre_filogenetic();
 
     /** @brief Afegeix una distància amb una altra espècie
      * \pre dist >= 0 i id1 != id2
-     * \post S'ha afegit (ordenat alfabèticament) dist al map de distàncies d'id1 la distància amb id2 */
+     * \post S'ha afegit (ordenat alfabèticament) dist a la taula de distàncies d'id1 la distància amb id2 */
     void afegir_dist_cluster(const string& id1, const string& id2, const double& dist);
 
     /** @brief Afegeix un nou cluster al cjt de clusters
@@ -85,22 +85,24 @@ public:
      * \post El paràmatre implícit ha quedat buit */
     void neteja_clusters();
 
-    //Consultores:
+    //Lectura/escriptura:
 
     /** @brief Imprimeix el clúster amb l'id donat
     *  \pre Existeix un clúster amb this->id = id
     *  \post S'ha imprès l'id i estructura arbòrea del clúster pel canal estàndard de sortida */
     void imprimeix_cluster(const string& id) const;
 
-    /** @brief Retorna si existeix un clúser amb id dins del cjt_clusters
-    *  \pre Cert
-    *  \post Retorna cert si i només si el clúster pertany al paràmetre implícit */
-    bool existeix_cluster(const string& id) const;
-
     /** @brief Imprimeix les distàncies de tots els clústers
     *  \pre Cert
     *  \post S'han imprès totes les distàncies pel canal estàndard de sortida */
     void imprimir_taula_distancies() const;
+
+    //Consultores:
+
+    /** @brief Retorna si existeix un clúser amb id dins del cjt_clusters
+    *  \pre Cert
+    *  \post Retorna cert si i només si el clúster pertany al paràmetre implícit */
+    bool existeix_cluster(const string& id) const;
 
     /** @brief Retorna el numero de clusters de la taula de distàncies
      * \pre Cert

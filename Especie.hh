@@ -24,7 +24,7 @@ class Especie{
 private:
     ///Gen de l'espècie
     string gen;
-    ///Distàncies de l'espècie amb la resta
+    ///Distàncies de l'espècie amb la resta ordenades alfabèticament
     map<string,double> distancies;
     ///kmers
     map<string,int> kmer;
@@ -39,11 +39,6 @@ private:
 public:
     
     //Creadores:
-
-    /** @brief Creadora per defecte 
-     * \pre Cert
-     * \post S'ha creat una espècie buida */
-    Especie();
 
     /** @brief Creadora
     * \pre gen.size() >= k
@@ -61,6 +56,8 @@ public:
     * \pre Id ha d'estar al cjt de distàncies, id != this->id
     * \post Ha retornat la distància amb espècie id*/
     double consultar_distancia(const string& id) const;
+
+    //Lectura/escriptura:
 
     /** @brief Imprimeix les distàncies amb la resta d'espècies
     * \pre Cert

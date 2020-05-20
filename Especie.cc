@@ -3,8 +3,6 @@
 
 #include "Especie.hh"
 
-Especie::Especie(){}
-
 void Especie::definir_k(int k_in){
     k = k_in;
 }

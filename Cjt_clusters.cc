@@ -29,11 +29,11 @@ void Cjt_clusters::afegir_cluster(const string& id){
     colleccio_clusters.insert(make_pair(id,arbre));
 }
 
-pair<string,string> Cjt_clusters::calcular_min_dist(){
+pair<string,string> Cjt_clusters::calcular_min_dist() const{
     pair<string,string> min_dist;
     double dist_min = 101;
-    for(map<string,dist_cluster>::iterator it = distancies.begin(); it != distancies.end(); ++it){
-        for(map<string,double>::iterator it_1 = it->second.begin(); it_1 != it->second.end(); ++it_1){
+    for(map<string,dist_cluster>::const_iterator it = distancies.begin(); it != distancies.end(); ++it){
+        for(map<string,double>::const_iterator it_1 = it->second.begin(); it_1 != it->second.end(); ++it_1){
             if(it->first != it_1->first and it_1->second < dist_min){
                 min_dist.first = it->first;
                 min_dist.second = it_1->first;
@@ -50,13 +50,17 @@ void Cjt_clusters::recalcular_distancia_wpgma(const pair<string,string>& min_dis
         double dist;
         string id_actual = it->first;
         if(id_actual != min_dist.first and id_actual != min_dist.second){
-            if(id_actual < min_dist.first){
+            //si l'id de l'espècie actual és més petit q l'id del cluster nou més 
+            //petit vol dir que conté les distàncies amb els clusters que formen el nou cluster
+            if(id_actual < min_dist.first){ 
                 dist = (it->second.find(min_dist.first)->second+it->second.find(min_dist.second)->second)/2;
                 it->second.erase(min_dist.first);
                 it->second.erase(min_dist.second);
                 it->second.insert(make_pair(id_nou_cluster,dist));
             }
-            else if(id_actual < min_dist.second){
+            //si l'id actual és més petit que l'id més gran del nou cluster vol dir que
+            //conté les seves distàncies
+            else if(id_actual < min_dist.second){ // 
                 dist = it->second.find(min_dist.second)->second;
                 it->second.erase(min_dist.second);
                 auto aux = dist_nou_cluster.find(id_actual);
