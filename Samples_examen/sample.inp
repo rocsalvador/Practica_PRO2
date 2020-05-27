@@ -8,50 +8,60 @@ b    GCAACCTTTGTGGGCGCAGT
 c    ACGATTTGCGTAAGCTATGT
 
 imprime_cjt_especies
-
-distancia a c
-distancia x c
-distancia a x
-distancia x y
-distancia c a
-
-obtener_gen c
-obtener_gen x
 tabla_distancias
+
+imprime_arbol_filogenetico
 
 crea_especie f    GAAAAAAAAAAAAAAAAAAAAA
-crea_especie f    TCGATACCAGAGAAACTGTT
 crea_especie g    AAAAAAAAAAAAAAAAAAAAAA
-crea_especie h    AAAAAAAAAAAAAAAAAAAAAG
 
 imprime_cjt_especies
 tabla_distancias
-
-elimina_especie h
-elimina_especie h
-
-existe_especie f
-existe_especie h
-
-imprime_cjt_especies
-tabla_distancias
-
 
 imprime_arbol_filogenetico
 
 elimina_especie nuevo1
+crea_especie nuevo1 TTTAAACCCGGG
 
 inicializa_clusters
 
-ejecuta_paso_wpgma
+elimina_especie a
+
+imprime_cjt_especies
+tabla_distancias
+
+ejecuta_paso_clust
 
 imprime_cluster c
 
-ejecuta_paso_wpgma
+ejecuta_paso_clust
 
-imprime_cluster ac
+imprime_cluster g
 
-imprime_cluster eg
+imprime_cluster cg
+
+imprime_cluster nuevo1
+
+ejecuta_paso_clust
+
+ejecuta_paso_clust
+
+imprime_cluster bfdec
+
+crea_especie nuevo2 AATCTGGCTCTGAATAAGACCCAGTATCAAGCCTTACCA
+
+ejecuta_paso_clust
+
+ejecuta_paso_clust
+
+imprime_cluster a
+
+inicializa_clusters
+
+crea_especie nuevo2 AAA
+
+imprime_arbol_filogenetico
+
 
 lee_cjt_especies
 
@@ -63,7 +73,7 @@ tabla_distancias
 
 imprime_arbol_filogenetico
 
-ejecuta_paso_wpgma
+ejecuta_paso_clust
 
 crea_especie pangolin AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 
@@ -75,6 +85,6 @@ obtener_gen pangolin
 
 imprime_arbol_filogenetico
 
-ejecuta_paso_wpgma
+ejecuta_paso_clust
 
 fin
