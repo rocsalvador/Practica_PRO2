@@ -32,42 +32,38 @@ string Especie::consultar_gen() const{
 }
 
 void Especie::distancia(const Especie& esp, const string& id){
-    double unio = 0;
-    double inters = 0;
-
-    map<string,int>::const_iterator it = kmer.begin();
-    map<string,int>::const_iterator it1 = esp.kmer.begin();
-
-    while(it != kmer.end() and it1 != esp.kmer.end()){
-        if(it1->first == it->first){
-            unio += max(it->second,it1->second);
-            inters += min(it->second,it1->second);
-            ++it;
-            ++it1;
+    map<string,int>::const_iterator i = kmer.begin(), k = esp.kmer.begin();
+    double dalt = 0, baix_1 = 0, baix_2 = 0;
+    while (i != kmer.end() and k != esp.kmer.end()) { 
+        if (i->first == k->first) {
+            dalt += i->second*k->second;
+            baix_1 += i->second*i->second;
+            baix_2 += k->second*k->second;
+            ++i;
+            ++k;
         }
-        else if(it->first < it1->first){
-            unio += it->second;
-            ++it;
+        else if (i->first < k->first) {
+            baix_1 += i->second*i->second;
+            ++i;
         }
-        else{
-            unio += it1->second;
-            ++it1;
+        else {
+            baix_2 += k->second*k->second;
+            ++k;
         }
     }
 
-    while(it != kmer.end()){
-        unio += it->second;
-        ++it;
+    while (i != kmer.end()) {
+            baix_1 += i->second*i->second;
+            ++i;
+    } 
+
+    while (k != esp.kmer.end()) { 
+            baix_2 += k->second*k->second;
+            ++k;
     }
-
-    while(it1 != esp.kmer.end()){
-        unio += it1->second;
-        ++it1;
-    }
-
-    double dist = (1 - (inters/unio))*100;
-
-    distancies.insert(make_pair(id,dist));
+    double den = sqrt(baix_1) * sqrt(baix_2);
+    double pi = M_1_PI*acos(dalt/den);
+    distancies.insert(make_pair(id,(1-pi)*100));
 }
 
 void Especie::imprimir_distancies() const{

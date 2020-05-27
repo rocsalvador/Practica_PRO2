@@ -7,6 +7,8 @@
 #ifndef NO_DIAGRAM
 #include <map>
 #include <iostream>
+#define _USE_MATH_DEFINES
+#include <cmath>
 #endif
 
 using namespace std;

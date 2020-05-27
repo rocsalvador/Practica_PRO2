@@ -33,6 +33,8 @@ private:
     /// Arbres dels diferents clusters amb la distància amb els seus fills
     map<string,BinTree<pair<string,double>>> colleccio_clusters;
 
+    map<string,int> num_fills;
+
     /** @brief Retorna els ids dels clusters a menor distància
      * \pre Número de clusters > 1
      * \post S'ha retornat els strings dels clusters a menor distància ordenats alfabèticament */

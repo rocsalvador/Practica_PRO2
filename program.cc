@@ -127,7 +127,7 @@ int main(){
             clusters.imprimir_taula_distancies();
             cout << endl;
         }
-        else if(op == "ejecuta_paso_wpgma"){
+        else if(op == "ejecuta_paso_clust"){
             cout << "# " << op << endl;
             if(clusters.num_clusters() > 1){
                 clusters.pas_wpgma();
