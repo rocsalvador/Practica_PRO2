@@ -43,7 +43,7 @@
  * 
  * <b> Grup: </b> 11
  * 
- * <b> Quadrimestre primeavera 2020 </b>
+ * <b> Quadrimestre primavera 2020 </b>
 */
 
 ///Variable k per definir kmers
