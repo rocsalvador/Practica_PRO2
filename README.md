@@ -12,7 +12,7 @@ entre espècies i generar un arbre filogenètic mitjançant l'algorisme WPGMA.
   
 - G++, instal·lable executant `sudo apt install g++` a la terminal
   
-**Execució**
+**Execució:**
 
 Obrir la terminal a la carpeta on tinguem els fitxers:
   
@@ -68,7 +68,7 @@ Si no ens surt cap missatge d'error el programa és correcte
     
 8. *imprime_cjt_especies*
 
-        Output: Cjt d'ids de les espècies i les seves respectives distàncies
+        Output: Cjt d'ids de les espècies i el seu respectiu gen
 
 9. *inicializa_clusters*
 
