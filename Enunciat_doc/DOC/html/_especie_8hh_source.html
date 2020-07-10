@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Pràctica PRO2 (Primavera 2020): Fitxer de Codi Especie.hh</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Pràctica PRO2 (Primavera 2020)
+   &#160;<span id="projectnumber">Roc Salvador Andreazini</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generat per Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Cerca');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Cerca');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">Especie.hh</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_especie_8hh.html">Veure la documentació d'aquest fitxer.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#ifndef ESPECIE</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#define ESPECIE</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#ifndef NO_DIAGRAM</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;map&gt;</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespacestd.html">std</a>;</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div><div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="class_especie.html">   25</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_especie.html">Especie</a>{ </div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">private</span>:</div><div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="class_especie.html#ac35bb565f7346cd6317b3a8c849456d1">   28</a></span>&#160;    <span class="keywordtype">string</span> <a class="code" href="class_especie.html#ac35bb565f7346cd6317b3a8c849456d1">gen</a>;</div><div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="class_especie.html#ad4bbf9359ebc17c3c7f501bc31c86509">   30</a></span>&#160;    map&lt;string,double&gt; <a class="code" href="class_especie.html#ad4bbf9359ebc17c3c7f501bc31c86509">distancies</a>;</div><div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="class_especie.html#ab6740db160f2d7335a98fa8d9f745cbe">   32</a></span>&#160;    map&lt;string,int&gt; <a class="code" href="class_especie.html#ab6740db160f2d7335a98fa8d9f745cbe">kmer</a>;</div><div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="class_especie.html#a592c0ddeeebc786969f3040fbefea9df">   34</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="class_especie.html#a592c0ddeeebc786969f3040fbefea9df">k</a>;</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">void</span> calcular_kmer();</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">public</span>:</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    </div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="comment">//Creadora:</span></div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="class_especie.html">Especie</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; gen);</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="comment">//Consultores:</span></div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">string</span> consultar_gen() <span class="keyword">const</span>;</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">double</span> consultar_distancia(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; <span class="keywordtype">id</span>) <span class="keyword">const</span>;</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="comment">//Lectura/escriptura:</span></div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordtype">void</span> imprimir_distancies() <span class="keyword">const</span>;</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="comment">//Modificadores:</span></div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordtype">void</span> distancia(<span class="keyword">const</span> <a class="code" href="class_especie.html">Especie</a>&amp; esp, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; <span class="keywordtype">id</span>);</div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordtype">void</span> eliminar_esp_dist(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; <span class="keywordtype">id</span>);</div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> definir_k(<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; k);</div><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="comment">//Destructora per defecte:</span></div><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    ~<a class="code" href="class_especie.html">Especie</a>();</div><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;};</div><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="preprocessor">#endif</span></div><div class="ttc" id="class_especie_html_a592c0ddeeebc786969f3040fbefea9df"><div class="ttname"><a href="class_especie.html#a592c0ddeeebc786969f3040fbefea9df">Especie::k</a></div><div class="ttdeci">static int k</div><div class="ttdoc">k per crear els kmers </div><div class="ttdef"><b>Definition:</b> <a href="_especie_8hh_source.html#l00034">Especie.hh:34</a></div></div>
+<div class="ttc" id="namespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div></div>
+<div class="ttc" id="class_especie_html_ab6740db160f2d7335a98fa8d9f745cbe"><div class="ttname"><a href="class_especie.html#ab6740db160f2d7335a98fa8d9f745cbe">Especie::kmer</a></div><div class="ttdeci">map&lt; string, int &gt; kmer</div><div class="ttdoc">kmers </div><div class="ttdef"><b>Definition:</b> <a href="_especie_8hh_source.html#l00032">Especie.hh:32</a></div></div>
+<div class="ttc" id="class_especie_html"><div class="ttname"><a href="class_especie.html">Especie</a></div><div class="ttdoc">Representa una espècie amb els seus atributs i les seves operacions. </div><div class="ttdef"><b>Definition:</b> <a href="_especie_8hh_source.html#l00025">Especie.hh:25</a></div></div>
+<div class="ttc" id="class_especie_html_ac35bb565f7346cd6317b3a8c849456d1"><div class="ttname"><a href="class_especie.html#ac35bb565f7346cd6317b3a8c849456d1">Especie::gen</a></div><div class="ttdeci">string gen</div><div class="ttdoc">Gen de l&amp;#39;espècie. </div><div class="ttdef"><b>Definition:</b> <a href="_especie_8hh_source.html#l00028">Especie.hh:28</a></div></div>
+<div class="ttc" id="class_especie_html_ad4bbf9359ebc17c3c7f501bc31c86509"><div class="ttname"><a href="class_especie.html#ad4bbf9359ebc17c3c7f501bc31c86509">Especie::distancies</a></div><div class="ttdeci">map&lt; string, double &gt; distancies</div><div class="ttdoc">Distàncies de l&amp;#39;espècie amb la resta. </div><div class="ttdef"><b>Definition:</b> <a href="_especie_8hh_source.html#l00030">Especie.hh:30</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generat per &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

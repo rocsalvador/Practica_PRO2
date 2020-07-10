@@ -1,0 +1,442 @@
+\hypertarget{class_cjt__especies}{}\section{Referència de la Classe Cjt\+\_\+especies}
+\label{class_cjt__especies}\index{Cjt\+\_\+especies@{Cjt\+\_\+especies}}
+
+
+Representa el conjunt d\textquotesingle{}espècies i les operacions que permet.  
+
+
+\subsection*{Mètodes públics}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_cjt__especies_ab297567c73ccd8caefbd8760d90294a1}{Cjt\+\_\+especies} ()
+\begin{DoxyCompactList}\small\item\em Constructora per defecte. \end{DoxyCompactList}\item 
+void \hyperlink{class_cjt__especies_a542ea997b387b5bac131ba7bcb23aec3}{afegeix\+\_\+especie} (const string \&id, const string \&gen)
+\begin{DoxyCompactList}\small\item\em Crea una especie i l\textquotesingle{}afegeix al parametre implicit. \end{DoxyCompactList}\item 
+void \hyperlink{class_cjt__especies_a6de3583aff6835d743fc9493c7b38576}{eliminar\+\_\+especie} (const string \&id)
+\begin{DoxyCompactList}\small\item\em Elimina una especie del parametre implicit. \end{DoxyCompactList}\item 
+void \hyperlink{class_cjt__especies_a12bd759f16126d0e34b06ecf15575456}{llegir\+\_\+cjt\+\_\+especies} ()
+\begin{DoxyCompactList}\small\item\em Llegeix n espècies i les afegeix al conjunt. \end{DoxyCompactList}\item 
+string \hyperlink{class_cjt__especies_ae6c9a86512b2ed7686741459167b68c9}{obtenir\+\_\+gen} (const string \&id) const
+\begin{DoxyCompactList}\small\item\em Retorna el gen de l\textquotesingle{}espècie id. \end{DoxyCompactList}\item 
+bool \hyperlink{class_cjt__especies_a7fa2f303eb4e3065d87174a1c3e71942}{existeix\+\_\+especie} (const string \&id) const
+\begin{DoxyCompactList}\small\item\em Retorna cert si l\textquotesingle{}espècie és al cjt d\textquotesingle{}espècies. \end{DoxyCompactList}\item 
+double \hyperlink{class_cjt__especies_abcea459e5b302c0eda1583b1dc571bff}{consultar\+\_\+distancia} (const string \&id\+\_\+1, const string \&id\+\_\+2) const
+\begin{DoxyCompactList}\small\item\em Calcula la distancia entre dues espècies. \end{DoxyCompactList}\item 
+void \hyperlink{class_cjt__especies_a568357e9132b16cfe7280e29e6e89cfb}{inicialitza\+\_\+clusters} (\hyperlink{class_cjt__clusters}{Cjt\+\_\+clusters} \&clusters) const
+\begin{DoxyCompactList}\small\item\em Inicialitza el cjt de clusters amb el cjt d\textquotesingle{}especies actual. \end{DoxyCompactList}\item 
+int \hyperlink{class_cjt__especies_a2539f8918c40587579e1b98be28bdddc}{consultar\+\_\+mida} () const
+\begin{DoxyCompactList}\small\item\em Retorna el número d\textquotesingle{}espècies del conjunt. \end{DoxyCompactList}\item 
+void \hyperlink{class_cjt__especies_aeb2402fbb6b5cc5eeea31981c51110bc}{imprimir\+\_\+taula\+\_\+distancies} () const
+\begin{DoxyCompactList}\small\item\em Imprimeix totes les distàncies del conjunt d\textquotesingle{}espècies. \end{DoxyCompactList}\item 
+void \hyperlink{class_cjt__especies_a8bc985ceafb3bb0e5f3c68ba52a36e86}{escriure\+\_\+cjt\+\_\+especies} () const
+\begin{DoxyCompactList}\small\item\em Escriu el conjunt d\textquotesingle{}espècies. \end{DoxyCompactList}\item 
+\hyperlink{class_cjt__especies_a05182978f6fff11a0fa1cec49514dd5e}{$\sim$\+Cjt\+\_\+especies} ()
+\begin{DoxyCompactList}\small\item\em Constructora per defecte. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Atributs Privats}
+\begin{DoxyCompactItemize}
+\item 
+map$<$ string, \hyperlink{class_especie}{Especie} $>$ \hyperlink{class_cjt__especies_aa253bc335c8c8176b8ece5c49a15c5f3}{inventari}
+\begin{DoxyCompactList}\small\item\em Conjunt d\textquotesingle{}especies, que no guarden distàncies repetides. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descripció Detallada}
+Representa el conjunt d\textquotesingle{}espècies i les operacions que permet. 
+
+Conté les operacions necessàries per poder gestionar totes les espècies i traspassar tota la informació necessària al conjunt de clusters.
+
+Les dades de la taula de distàncies estan sempre ordenades alfabèticament
+
+Les distàncies només s\textquotesingle{}aguarden a l\textquotesingle{}espècie amb id més petit. 
+
+Definició a la línia 21 del fitxer Cjt\+\_\+especies.\+hh.
+
+
+
+\subsection{Documentació del Constructor i el Destructor}
+\mbox{\Hypertarget{class_cjt__especies_ab297567c73ccd8caefbd8760d90294a1}\label{class_cjt__especies_ab297567c73ccd8caefbd8760d90294a1}} 
+\index{Cjt\+\_\+especies@{Cjt\+\_\+especies}!Cjt\+\_\+especies@{Cjt\+\_\+especies}}
+\index{Cjt\+\_\+especies@{Cjt\+\_\+especies}!Cjt\+\_\+especies@{Cjt\+\_\+especies}}
+\subsubsection{\texorpdfstring{Cjt\+\_\+especies()}{Cjt\_especies()}}
+{\footnotesize\ttfamily Cjt\+\_\+especies\+::\+Cjt\+\_\+especies (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructora per defecte. 
+
+\begin{DoxyPrecond}{Precondició}
+Cert 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+S\textquotesingle{}ha creat un cjt d\textquotesingle{}espècies buit 
+\end{DoxyPostcond}
+
+
+Definició a la línia 6 del fitxer Cjt\+\_\+especies.\+cc.
+
+
+\begin{DoxyCode}
+6 \{\}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_cjt__especies_a05182978f6fff11a0fa1cec49514dd5e}\label{class_cjt__especies_a05182978f6fff11a0fa1cec49514dd5e}} 
+\index{Cjt\+\_\+especies@{Cjt\+\_\+especies}!````~Cjt\+\_\+especies@{$\sim$\+Cjt\+\_\+especies}}
+\index{````~Cjt\+\_\+especies@{$\sim$\+Cjt\+\_\+especies}!Cjt\+\_\+especies@{Cjt\+\_\+especies}}
+\subsubsection{\texorpdfstring{$\sim$\+Cjt\+\_\+especies()}{~Cjt\_especies()}}
+{\footnotesize\ttfamily Cjt\+\_\+especies\+::$\sim$\+Cjt\+\_\+especies (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructora per defecte. 
+
+\begin{DoxyPrecond}{Precondició}
+Cert 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+S\textquotesingle{}ha eliminat el cjt d\textquotesingle{}espècies 
+\end{DoxyPostcond}
+
+
+Definició a la línia 97 del fitxer Cjt\+\_\+especies.\+cc.
+
+
+\begin{DoxyCode}
+97 \{\}
+\end{DoxyCode}
+
+
+\subsection{Documentació de les Funcions Membre}
+\mbox{\Hypertarget{class_cjt__especies_a542ea997b387b5bac131ba7bcb23aec3}\label{class_cjt__especies_a542ea997b387b5bac131ba7bcb23aec3}} 
+\index{Cjt\+\_\+especies@{Cjt\+\_\+especies}!afegeix\+\_\+especie@{afegeix\+\_\+especie}}
+\index{afegeix\+\_\+especie@{afegeix\+\_\+especie}!Cjt\+\_\+especies@{Cjt\+\_\+especies}}
+\subsubsection{\texorpdfstring{afegeix\+\_\+especie()}{afegeix\_especie()}}
+{\footnotesize\ttfamily void Cjt\+\_\+especies\+::afegeix\+\_\+especie (\begin{DoxyParamCaption}\item[{const string \&}]{id,  }\item[{const string \&}]{gen }\end{DoxyParamCaption})}
+
+
+
+Crea una especie i l\textquotesingle{}afegeix al parametre implicit. 
+
+\begin{DoxyPrecond}{Precondició}
+La nova espècie id no està al paràmetre implícit 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+La nova especie s\textquotesingle{}ha afegit (ordenat alfabèticament) al parametre implicit, s\textquotesingle{}han afegit a les espècies amb identificador $<$ id la distància amb espeècie id i a espècie id s\textquotesingle{}han afegit les distàncies amb espècies amb identificador $>$ id 
+\end{DoxyPostcond}
+
+
+Definició a la línia 8 del fitxer Cjt\+\_\+especies.\+cc.
+
+
+\begin{DoxyCode}
+8                                                                      \{
+9     \hyperlink{class_especie}{Especie} esp(gen);
+10     \textcolor{keyword}{auto} afegit = \hyperlink{class_cjt__especies_aa253bc335c8c8176b8ece5c49a15c5f3}{inventari}.insert(make\_pair(\textcolor{keywordtype}{id},esp));
+11     \textcolor{keywordflow}{for}(map<string,Especie>::iterator it = \hyperlink{class_cjt__especies_aa253bc335c8c8176b8ece5c49a15c5f3}{inventari}.begin(); it != 
+      \hyperlink{class_cjt__especies_aa253bc335c8c8176b8ece5c49a15c5f3}{inventari}.end(); ++it)\{
+12         \textcolor{keywordflow}{if}(\textcolor{keywordtype}{id} != it->first)\{
+13             \textcolor{keywordflow}{if}(id < it->first) afegit.first->second.distancia(it->second,it->first);
+14             \textcolor{keywordflow}{else} it->second.distancia(esp,\textcolor{keywordtype}{id});
+15         \}
+16     \}
+17 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_cjt__especies_a6de3583aff6835d743fc9493c7b38576}\label{class_cjt__especies_a6de3583aff6835d743fc9493c7b38576}} 
+\index{Cjt\+\_\+especies@{Cjt\+\_\+especies}!eliminar\+\_\+especie@{eliminar\+\_\+especie}}
+\index{eliminar\+\_\+especie@{eliminar\+\_\+especie}!Cjt\+\_\+especies@{Cjt\+\_\+especies}}
+\subsubsection{\texorpdfstring{eliminar\+\_\+especie()}{eliminar\_especie()}}
+{\footnotesize\ttfamily void Cjt\+\_\+especies\+::eliminar\+\_\+especie (\begin{DoxyParamCaption}\item[{const string \&}]{id }\end{DoxyParamCaption})}
+
+
+
+Elimina una especie del parametre implicit. 
+
+\begin{DoxyPrecond}{Precondició}
+L\textquotesingle{}especie id pertany al parametre implicit 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+L\textquotesingle{}especie id s\textquotesingle{}ha eliminat del parametre implicit i s\textquotesingle{}han eliminat les distàncies amb espècie id de les espècies amb identificador $<$ id 
+\end{DoxyPostcond}
+
+
+Definició a la línia 59 del fitxer Cjt\+\_\+especies.\+cc.
+
+
+\begin{DoxyCode}
+59                                                    \{
+60     \hyperlink{class_cjt__especies_aa253bc335c8c8176b8ece5c49a15c5f3}{inventari}.erase(\textcolor{keywordtype}{id});
+61     map<string,Especie>::iterator it = \hyperlink{class_cjt__especies_aa253bc335c8c8176b8ece5c49a15c5f3}{inventari}.begin();
+62     \textcolor{keywordflow}{while}(it != \hyperlink{class_cjt__especies_aa253bc335c8c8176b8ece5c49a15c5f3}{inventari}.end() and it->first < id)\{
+63         it->second.eliminar\_esp\_dist(\textcolor{keywordtype}{id});
+64         ++it;
+65     \}
+66 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_cjt__especies_a12bd759f16126d0e34b06ecf15575456}\label{class_cjt__especies_a12bd759f16126d0e34b06ecf15575456}} 
+\index{Cjt\+\_\+especies@{Cjt\+\_\+especies}!llegir\+\_\+cjt\+\_\+especies@{llegir\+\_\+cjt\+\_\+especies}}
+\index{llegir\+\_\+cjt\+\_\+especies@{llegir\+\_\+cjt\+\_\+especies}!Cjt\+\_\+especies@{Cjt\+\_\+especies}}
+\subsubsection{\texorpdfstring{llegir\+\_\+cjt\+\_\+especies()}{llegir\_cjt\_especies()}}
+{\footnotesize\ttfamily void Cjt\+\_\+especies\+::llegir\+\_\+cjt\+\_\+especies (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Llegeix n espècies i les afegeix al conjunt. 
+
+\begin{DoxyPrecond}{Precondició}
+Cert 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+S\textquotesingle{}han esborrat les espècies anteriors i s\textquotesingle{}han afegit les espècies llegides al parametre implícit 
+\end{DoxyPostcond}
+
+
+Definició a la línia 38 del fitxer Cjt\+\_\+especies.\+cc.
+
+
+\begin{DoxyCode}
+38                                       \{
+39     \hyperlink{class_cjt__especies_aa253bc335c8c8176b8ece5c49a15c5f3}{inventari}.clear();
+40     \textcolor{keywordtype}{int} n;
+41     cin >> n;
+42 
+43     \textcolor{keywordtype}{string} id, gen;
+44     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < n; ++i)\{
+45         cin >> \textcolor{keywordtype}{id} >> gen;
+46         \hyperlink{class_especie}{Especie} esp(gen);
+47         \hyperlink{class_cjt__especies_aa253bc335c8c8176b8ece5c49a15c5f3}{inventari}.insert(make\_pair(\textcolor{keywordtype}{id},esp));
+48     \}
+49 
+50     \textcolor{keywordflow}{for}(map<string,Especie>::iterator it = \hyperlink{class_cjt__especies_aa253bc335c8c8176b8ece5c49a15c5f3}{inventari}.begin(); it != 
+      \hyperlink{class_cjt__especies_aa253bc335c8c8176b8ece5c49a15c5f3}{inventari}.end(); ++it)\{
+51         \textcolor{keywordflow}{for}(map<string,Especie>::iterator it\_1 = it; it\_1 != \hyperlink{class_cjt__especies_aa253bc335c8c8176b8ece5c49a15c5f3}{inventari}.end(); ++it\_1)\{
+52             \textcolor{keywordflow}{if}(it->first != it\_1->first)\{
+53                 it->second.distancia(it\_1->second,it\_1->first);
+54             \}
+55         \}
+56     \}
+57 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_cjt__especies_ae6c9a86512b2ed7686741459167b68c9}\label{class_cjt__especies_ae6c9a86512b2ed7686741459167b68c9}} 
+\index{Cjt\+\_\+especies@{Cjt\+\_\+especies}!obtenir\+\_\+gen@{obtenir\+\_\+gen}}
+\index{obtenir\+\_\+gen@{obtenir\+\_\+gen}!Cjt\+\_\+especies@{Cjt\+\_\+especies}}
+\subsubsection{\texorpdfstring{obtenir\+\_\+gen()}{obtenir\_gen()}}
+{\footnotesize\ttfamily string Cjt\+\_\+especies\+::obtenir\+\_\+gen (\begin{DoxyParamCaption}\item[{const string \&}]{id }\end{DoxyParamCaption}) const}
+
+
+
+Retorna el gen de l\textquotesingle{}espècie id. 
+
+\begin{DoxyPrecond}{Precondició}
+L\textquotesingle{}element id pertany al parametre implicit 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+S\textquotesingle{}ha retornat el gen de l\textquotesingle{}identificador 
+\end{DoxyPostcond}
+
+
+Definició a la línia 19 del fitxer Cjt\+\_\+especies.\+cc.
+
+
+\begin{DoxyCode}
+19                                                       \{
+20     \textcolor{keywordflow}{return} \hyperlink{class_cjt__especies_aa253bc335c8c8176b8ece5c49a15c5f3}{inventari}.find(\textcolor{keywordtype}{id})->second.consultar\_gen();
+21 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_cjt__especies_a7fa2f303eb4e3065d87174a1c3e71942}\label{class_cjt__especies_a7fa2f303eb4e3065d87174a1c3e71942}} 
+\index{Cjt\+\_\+especies@{Cjt\+\_\+especies}!existeix\+\_\+especie@{existeix\+\_\+especie}}
+\index{existeix\+\_\+especie@{existeix\+\_\+especie}!Cjt\+\_\+especies@{Cjt\+\_\+especies}}
+\subsubsection{\texorpdfstring{existeix\+\_\+especie()}{existeix\_especie()}}
+{\footnotesize\ttfamily bool Cjt\+\_\+especies\+::existeix\+\_\+especie (\begin{DoxyParamCaption}\item[{const string \&}]{id }\end{DoxyParamCaption}) const}
+
+
+
+Retorna cert si l\textquotesingle{}espècie és al cjt d\textquotesingle{}espècies. 
+
+\begin{DoxyPrecond}{Precondició}
+Cert 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+S\textquotesingle{}ha retornat cert si l\textquotesingle{}especie pertany al parametre implicit sinó fals 
+\end{DoxyPostcond}
+
+
+Definició a la línia 74 del fitxer Cjt\+\_\+especies.\+cc.
+
+
+\begin{DoxyCode}
+74                                                          \{
+75     \textcolor{keywordflow}{return} \hyperlink{class_cjt__especies_aa253bc335c8c8176b8ece5c49a15c5f3}{inventari}.find(\textcolor{keywordtype}{id}) != \hyperlink{class_cjt__especies_aa253bc335c8c8176b8ece5c49a15c5f3}{inventari}.end();
+76 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_cjt__especies_abcea459e5b302c0eda1583b1dc571bff}\label{class_cjt__especies_abcea459e5b302c0eda1583b1dc571bff}} 
+\index{Cjt\+\_\+especies@{Cjt\+\_\+especies}!consultar\+\_\+distancia@{consultar\+\_\+distancia}}
+\index{consultar\+\_\+distancia@{consultar\+\_\+distancia}!Cjt\+\_\+especies@{Cjt\+\_\+especies}}
+\subsubsection{\texorpdfstring{consultar\+\_\+distancia()}{consultar\_distancia()}}
+{\footnotesize\ttfamily double Cjt\+\_\+especies\+::consultar\+\_\+distancia (\begin{DoxyParamCaption}\item[{const string \&}]{id\+\_\+1,  }\item[{const string \&}]{id\+\_\+2 }\end{DoxyParamCaption}) const}
+
+
+
+Calcula la distancia entre dues espècies. 
+
+\begin{DoxyPrecond}{Precondició}
+Els paràmetres pertanyen al paràmetre implicit 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+S\textquotesingle{}ha retornat la distancia entre les dues espècies 
+\end{DoxyPostcond}
+
+
+Definició a la línia 68 del fitxer Cjt\+\_\+especies.\+cc.
+
+
+\begin{DoxyCode}
+68                                                                                     \{
+69     \textcolor{keywordflow}{if}(id\_1 < id\_2) \textcolor{keywordflow}{return} \hyperlink{class_cjt__especies_aa253bc335c8c8176b8ece5c49a15c5f3}{inventari}.find(id\_1)->second.consultar\_distancia(id\_2);
+70     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(id\_1 == id\_2) \textcolor{keywordflow}{return} 0;
+71     \textcolor{keywordflow}{else} \textcolor{keywordflow}{return} \hyperlink{class_cjt__especies_aa253bc335c8c8176b8ece5c49a15c5f3}{inventari}.find(id\_2)->second.consultar\_distancia(id\_1);
+72 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_cjt__especies_a568357e9132b16cfe7280e29e6e89cfb}\label{class_cjt__especies_a568357e9132b16cfe7280e29e6e89cfb}} 
+\index{Cjt\+\_\+especies@{Cjt\+\_\+especies}!inicialitza\+\_\+clusters@{inicialitza\+\_\+clusters}}
+\index{inicialitza\+\_\+clusters@{inicialitza\+\_\+clusters}!Cjt\+\_\+especies@{Cjt\+\_\+especies}}
+\subsubsection{\texorpdfstring{inicialitza\+\_\+clusters()}{inicialitza\_clusters()}}
+{\footnotesize\ttfamily void Cjt\+\_\+especies\+::inicialitza\+\_\+clusters (\begin{DoxyParamCaption}\item[{\hyperlink{class_cjt__clusters}{Cjt\+\_\+clusters} \&}]{clusters }\end{DoxyParamCaption}) const}
+
+
+
+Inicialitza el cjt de clusters amb el cjt d\textquotesingle{}especies actual. 
+
+\begin{DoxyPrecond}{Precondició}
+Cert 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+El paràmetre explícit ha quedat igual que la taula de distàncies de les espècies del paràmetre implícit 
+\end{DoxyPostcond}
+
+
+Definició a la línia 23 del fitxer Cjt\+\_\+especies.\+cc.
+
+
+\begin{DoxyCode}
+23                                                                    \{
+24     clusters.\hyperlink{class_cjt__clusters_a70aca86e77c34ce652d857b16cc2572f}{neteja\_clusters}();
+25     \textcolor{keywordflow}{for}(map<string,Especie>::const\_iterator it = \hyperlink{class_cjt__especies_aa253bc335c8c8176b8ece5c49a15c5f3}{inventari}.begin(); it != 
+      \hyperlink{class_cjt__especies_aa253bc335c8c8176b8ece5c49a15c5f3}{inventari}.end(); ++it)\{
+26         \textcolor{keywordflow}{for}(map<string,Especie>::const\_iterator it1 = it; it1 != \hyperlink{class_cjt__especies_aa253bc335c8c8176b8ece5c49a15c5f3}{inventari}.end(); ++it1)\{
+27             \textcolor{keywordflow}{if}(it->first != it1->first)\{
+28                 \textcolor{keywordtype}{string} id1 = it->first;
+29                 \textcolor{keywordtype}{string} id2 = it1->first;
+30                 \textcolor{keywordtype}{double} dist = it->second.consultar\_distancia(id2);
+31                 clusters.\hyperlink{class_cjt__clusters_a928bbb5f0ee0756d291ad28e453892bb}{afegir\_dist\_cluster}(id1,id2,dist);
+32             \}
+33             \textcolor{keywordflow}{else} clusters.\hyperlink{class_cjt__clusters_a2a27f4c57c217eeec5e91777dda19c9d}{afegir\_cluster}(it->first);
+34         \}
+35     \}
+36 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_cjt__especies_a2539f8918c40587579e1b98be28bdddc}\label{class_cjt__especies_a2539f8918c40587579e1b98be28bdddc}} 
+\index{Cjt\+\_\+especies@{Cjt\+\_\+especies}!consultar\+\_\+mida@{consultar\+\_\+mida}}
+\index{consultar\+\_\+mida@{consultar\+\_\+mida}!Cjt\+\_\+especies@{Cjt\+\_\+especies}}
+\subsubsection{\texorpdfstring{consultar\+\_\+mida()}{consultar\_mida()}}
+{\footnotesize\ttfamily int Cjt\+\_\+especies\+::consultar\+\_\+mida (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Retorna el número d\textquotesingle{}espècies del conjunt. 
+
+\begin{DoxyPrecond}{Precondició}
+Cert 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+S\textquotesingle{}ha retornat el valor de la mida del paràmetre implicit 
+\end{DoxyPostcond}
+
+
+Definició a la línia 92 del fitxer Cjt\+\_\+especies.\+cc.
+
+
+\begin{DoxyCode}
+92                                       \{
+93     \textcolor{keywordflow}{return} \hyperlink{class_cjt__especies_aa253bc335c8c8176b8ece5c49a15c5f3}{inventari}.size();
+94 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_cjt__especies_aeb2402fbb6b5cc5eeea31981c51110bc}\label{class_cjt__especies_aeb2402fbb6b5cc5eeea31981c51110bc}} 
+\index{Cjt\+\_\+especies@{Cjt\+\_\+especies}!imprimir\+\_\+taula\+\_\+distancies@{imprimir\+\_\+taula\+\_\+distancies}}
+\index{imprimir\+\_\+taula\+\_\+distancies@{imprimir\+\_\+taula\+\_\+distancies}!Cjt\+\_\+especies@{Cjt\+\_\+especies}}
+\subsubsection{\texorpdfstring{imprimir\+\_\+taula\+\_\+distancies()}{imprimir\_taula\_distancies()}}
+{\footnotesize\ttfamily void Cjt\+\_\+especies\+::imprimir\+\_\+taula\+\_\+distancies (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Imprimeix totes les distàncies del conjunt d\textquotesingle{}espècies. 
+
+\begin{DoxyPrecond}{Precondició}
+Cert 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+S\textquotesingle{}han imprès totes les distàncies pel canal estàndard de sortida 
+\end{DoxyPostcond}
+
+
+Definició a la línia 84 del fitxer Cjt\+\_\+especies.\+cc.
+
+
+\begin{DoxyCode}
+84                                                   \{
+85     \textcolor{keywordflow}{for}(map<string,Especie>::const\_iterator it = \hyperlink{class_cjt__especies_aa253bc335c8c8176b8ece5c49a15c5f3}{inventari}.begin(); it != 
+      \hyperlink{class_cjt__especies_aa253bc335c8c8176b8ece5c49a15c5f3}{inventari}.end(); ++it)\{
+86         cout << it->first << \textcolor{stringliteral}{":"};
+87         it->second.imprimir\_distancies();
+88         cout << endl;
+89     \}
+90 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_cjt__especies_a8bc985ceafb3bb0e5f3c68ba52a36e86}\label{class_cjt__especies_a8bc985ceafb3bb0e5f3c68ba52a36e86}} 
+\index{Cjt\+\_\+especies@{Cjt\+\_\+especies}!escriure\+\_\+cjt\+\_\+especies@{escriure\+\_\+cjt\+\_\+especies}}
+\index{escriure\+\_\+cjt\+\_\+especies@{escriure\+\_\+cjt\+\_\+especies}!Cjt\+\_\+especies@{Cjt\+\_\+especies}}
+\subsubsection{\texorpdfstring{escriure\+\_\+cjt\+\_\+especies()}{escriure\_cjt\_especies()}}
+{\footnotesize\ttfamily void Cjt\+\_\+especies\+::escriure\+\_\+cjt\+\_\+especies (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Escriu el conjunt d\textquotesingle{}espècies. 
+
+\begin{DoxyPrecond}{Precondició}
+Cert 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+S\textquotesingle{}han imprès les espècies pel canal estàndard de sortida 
+\end{DoxyPostcond}
+
+
+Definició a la línia 78 del fitxer Cjt\+\_\+especies.\+cc.
+
+
+\begin{DoxyCode}
+78                                               \{
+79     \textcolor{keywordflow}{for}(map<string,Especie>::const\_iterator it = \hyperlink{class_cjt__especies_aa253bc335c8c8176b8ece5c49a15c5f3}{inventari}.begin(); it != 
+      \hyperlink{class_cjt__especies_aa253bc335c8c8176b8ece5c49a15c5f3}{inventari}.end(); ++it)\{
+80         cout << it->first << \textcolor{stringliteral}{" "} << it->second.consultar\_gen() << endl;
+81     \}
+82 \}
+\end{DoxyCode}
+
+
+\subsection{Documentació de les Dades Membre}
+\mbox{\Hypertarget{class_cjt__especies_aa253bc335c8c8176b8ece5c49a15c5f3}\label{class_cjt__especies_aa253bc335c8c8176b8ece5c49a15c5f3}} 
+\index{Cjt\+\_\+especies@{Cjt\+\_\+especies}!inventari@{inventari}}
+\index{inventari@{inventari}!Cjt\+\_\+especies@{Cjt\+\_\+especies}}
+\subsubsection{\texorpdfstring{inventari}{inventari}}
+{\footnotesize\ttfamily map$<$string,\hyperlink{class_especie}{Especie}$>$ Cjt\+\_\+especies\+::inventari\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Conjunt d\textquotesingle{}especies, que no guarden distàncies repetides. 
+
+
+
+Definició a la línia 24 del fitxer Cjt\+\_\+especies.\+hh.
+
+
+
+La documentació d\textquotesingle{}aquesta classe es va generar a partir dels següents fitxers\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_cjt__especies_8hh}{Cjt\+\_\+especies.\+hh}\item 
+\hyperlink{_cjt__especies_8cc}{Cjt\+\_\+especies.\+cc}\end{DoxyCompactItemize}
