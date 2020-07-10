@@ -1,6 +1,6 @@
 # Practica Primavera 2020
 
-*Per accedir al codi de l'examen de la pràctica simplement heu d'accedir a la branca examen.*
+*Per accedir al codi de l'examen de la pràctica simplement heu canviar a la branca examen.*
 
 ## Enunciat de la pràctica
 Volem crear un programa per tal de gestionar un conjunt d'espècies, amb dos atributs identificador i gen, calcular les distàncies
