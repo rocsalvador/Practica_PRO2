@@ -1,0 +1,59 @@
+\hypertarget{_cjt__clusters_8cc}{}\section{Referència del Fitxer Cjt\+\_\+clusters.\+cc}
+\label{_cjt__clusters_8cc}\index{Cjt\+\_\+clusters.\+cc@{Cjt\+\_\+clusters.\+cc}}
+
+
+Implementació de la classe \hyperlink{class_cjt__clusters}{Cjt\+\_\+clusters}.  
+
+
+Inclou el graf de dependències per a Cjt\+\_\+clusters.\+cc\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=160pt]{_cjt__clusters_8cc__incl}
+\end{center}
+\end{figure}
+\subsection*{Funcions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_cjt__clusters_8cc_ac7539e7b223cc6042be093b32ac8b016}{imprimir\+\_\+arbre} (const Bin\+Tree$<$ pair$<$ string, double $>$$>$ \&arbre)
+\begin{DoxyCompactList}\small\item\em Imprimeix un arbre. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descripció Detallada}
+Implementació de la classe \hyperlink{class_cjt__clusters}{Cjt\+\_\+clusters}. 
+
+
+
+\subsection{Documentació de les Funcions}
+\mbox{\Hypertarget{_cjt__clusters_8cc_ac7539e7b223cc6042be093b32ac8b016}\label{_cjt__clusters_8cc_ac7539e7b223cc6042be093b32ac8b016}} 
+\index{Cjt\+\_\+clusters.\+cc@{Cjt\+\_\+clusters.\+cc}!imprimir\+\_\+arbre@{imprimir\+\_\+arbre}}
+\index{imprimir\+\_\+arbre@{imprimir\+\_\+arbre}!Cjt\+\_\+clusters.\+cc@{Cjt\+\_\+clusters.\+cc}}
+\subsubsection{\texorpdfstring{imprimir\+\_\+arbre()}{imprimir\_arbre()}}
+{\footnotesize\ttfamily void imprimir\+\_\+arbre (\begin{DoxyParamCaption}\item[{const Bin\+Tree$<$ pair$<$ string, double $>$$>$ \&}]{arbre }\end{DoxyParamCaption})}
+
+
+
+Imprimeix un arbre. 
+
+\begin{DoxyPrecond}{Precondició}
+El double de les fulles és igual a -\/1 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+S\textquotesingle{}ha imprès l\textquotesingle{}arbre pel canal estàndard de sortida 
+\end{DoxyPostcond}
+
+
+Definició a la línia 9 del fitxer Cjt\+\_\+clusters.\+cc.
+
+
+\begin{DoxyCode}
+9                                                               \{
+10     \textcolor{keywordflow}{if}(arbre.value().second == -1) cout << \textcolor{stringliteral}{"["} << arbre.value().first << \textcolor{stringliteral}{"]"};
+11     \textcolor{keywordflow}{else}\{
+12         cout << \textcolor{stringliteral}{"[("} << arbre.value().first << \textcolor{stringliteral}{", "} << arbre.value().second << \textcolor{stringliteral}{") "};
+13         \hyperlink{_cjt__clusters_8cc_ac7539e7b223cc6042be093b32ac8b016}{imprimir\_arbre}(arbre.left());
+14         \hyperlink{_cjt__clusters_8cc_ac7539e7b223cc6042be093b32ac8b016}{imprimir\_arbre}(arbre.right());
+15         cout << \textcolor{stringliteral}{"]"};
+16     \}
+17 \}
+\end{DoxyCode}
