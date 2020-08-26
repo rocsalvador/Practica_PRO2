@@ -2,7 +2,7 @@
 
 *Per accedir al codi de l'examen de la pràctica simplement heu de canviar a la branca examen.*
 
-## Enunciat de la pràctica
+## Enunciat de la pràctica (Veure PDF)
 Volem crear un programa per tal de gestionar un conjunt d'espècies, amb dos atributs identificador i gen, calcular les distàncies
 entre espècies i generar un arbre filogenètic mitjançant l'algorisme WPGMA.
 
@@ -22,13 +22,7 @@ Obrir la terminal a la carpeta on tinguem els fitxers:
   
 2. `./program.exe`, per executar el programa
 
-*Opcional per provar el programa:*
-  
-    ./program.exe < ./Samples/sample1.inp > sample.out
-    
-    diff -b ./Samples/sample1.cor sample.out
-    
-Si no ens surt cap missatge d'error el programa és correcte
+*Dins la carpeta Samples es troben els inputs i outputs del programa per comprovar que funciona correctament.*
   
 **Instruccions del programa:**
 
