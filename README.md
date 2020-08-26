@@ -2,7 +2,7 @@
 
 *Per accedir al codi de l'examen de la pràctica simplement heu de canviar a la branca examen.*
 
-## Enunciat de la pràctica (Veure PDF)
+## Enunciat de la pràctica (veure PDF)
 Volem crear un programa per tal de gestionar un conjunt d'espècies, amb dos atributs identificador i gen, calcular les distàncies
 entre espècies i generar un arbre filogenètic mitjançant l'algorisme WPGMA.
 
