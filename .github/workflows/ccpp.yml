@@ -14,12 +14,12 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: make
-      run: make
+      run: make -j8
     - name: run
-      run: ./program.exe < Samples/sample.inp > sample.out
+      run: ./program.exe < samples/sample.inp > sample.out
     - name: comparar
-      run: diff -b Samples/sample.cor sample.out
+      run: diff -b samples/sample.cor sample.out
     - name: run
-      run: ./program.exe < Samples/sample1.inp > sample.out
+      run: ./program.exe < samples/sample1.inp > sample.out
     - name: comparar
-      run: diff -b Samples/sample1.cor sample.out
+      run: diff -b samples/sample1.cor sample.out
