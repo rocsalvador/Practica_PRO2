@@ -4,14 +4,14 @@ program.exe: program.o Especie.o Cjt_especies.o Cjt_clusters.o
 	g++ -o program.exe program.o Especie.o Cjt_especies.o Cjt_clusters.o $(OPCIONS)
 	rm *.o
 
-Especie.o: Especie.cc Especie.hh
-	g++ -c Especie.cc $(OPCIONS)
+Especie.o: src/Especie.cc
+	g++ -c src/Especie.cc $(OPCIONS)
 
-Cjt_clusters.o: Cjt_clusters.cc Cjt_clusters.hh 
-	g++ -c Cjt_clusters.cc $(OPCIONS)
+Cjt_clusters.o: src/Cjt_clusters.cc
+	g++ -c src/Cjt_clusters.cc $(OPCIONS)
 
-Cjt_especies.o: Cjt_especies.cc Cjt_especies.hh Cjt_clusters.hh
-	g++ -c Cjt_especies.cc $(OPCIONS)
+Cjt_especies.o: src/Cjt_especies.cc
+	g++ -c src/Cjt_especies.cc $(OPCIONS)
 
-program.o: program.cc Cjt_especies.hh Cjt_clusters.hh
-	g++ -c program.cc $(OPCIONS)
+program.o: src/program.cc
+	g++ -c src/program.cc $(OPCIONS)
