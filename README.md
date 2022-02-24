@@ -1,4 +1,4 @@
-# Practica Primavera 2020
+# Practica Primavera 2020 Programaci
 
 *Per accedir al codi de l'examen de la pràctica simplement heu de canviar a la branca examen.*
 
